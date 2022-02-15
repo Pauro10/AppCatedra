@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "741328247166",
+    "project_id": "appcatedraunesco",
+    "storage_bucket": "appcatedraunesco.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741328247166:android:61762eb84f1fea4d2efb2f",
+        "android_client_info": {
+          "package_name": "edu.upc.appcatedraunesco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "741328247166-o08uakenij34gd9l9v9uusd7jc6qaqa9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY0oRVsM3iYG3o6XVBVfYBtt8vhu_dWBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "741328247166-o08uakenij34gd9l9v9uusd7jc6qaqa9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -10,7 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCatedraUnesco">
         <activity
+            android:name=".ActivityRegistre3"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityRegistre2"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityRegistre1"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityLogin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
