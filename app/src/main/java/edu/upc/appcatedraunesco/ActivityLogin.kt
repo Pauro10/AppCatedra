@@ -44,15 +44,15 @@ class ActivityLogin : AppCompatActivity() {
         hideProgressBar()
 
         auth = FirebaseAuth.getInstance()
-        referencia = FirebaseDatabase.getInstance().reference.child("USUARI/CLIENT")
+        referencia = FirebaseDatabase.getInstance().reference.child("USUARIO/CLIENTE")
         userId = auth.currentUser?.uid.toString()
 
-        bindingLogin.txtRegistre.setOnClickListener {
-            val intent = Intent(this, ActivityRegistre1::class.java)
+        bindingLogin.txtRegistro.setOnClickListener {
+            val intent = Intent(this, ActivityRegistro1::class.java)
             startActivity(intent)
         }
 
-        bindingLogin.btnIdentificat.setOnClickListener {
+        bindingLogin.btnIdentificarse.setOnClickListener {
             login(it)
         }
 
@@ -73,7 +73,7 @@ class ActivityLogin : AppCompatActivity() {
         }
 
         // Recordar cuenta
-        bindingLogin.cbRecordam.setOnClickListener {
+        bindingLogin.cbRecuerdame.setOnClickListener {
             remember = !remember
         }
 
@@ -99,7 +99,7 @@ class ActivityLogin : AppCompatActivity() {
 
                     if (task.isSuccessful) {
 
-                        view.snack("Inici de sessió correcte")
+                        view.snack(getString(R.string.login_sucs))
 
                         val prefs = getSharedPreferences(
                             getString(R.string.prefs_file),
@@ -111,13 +111,13 @@ class ActivityLogin : AppCompatActivity() {
 
                         startActivity(Intent(this, MainActivity::class.java))
                     } else {
-                        view.snack("Inici de sessió incorrecte")
+                        view.snack(getString(R.string.login_sucs))
                         hideProgressBar()
                     }
 
                 }
         } else {
-            view.snack("Has d'introduir els camps demanats")
+            view.snack(getString(R.string.error_campos))
             hideProgressBar()
         }
     }
@@ -168,8 +168,8 @@ class ActivityLogin : AppCompatActivity() {
     private fun showAlert() {
 
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Error inici de sessió")
-        builder.setMessage("S'ha produït un error en iniciar sessió")
+        builder.setTitle(getString(R.string.error_login))
+        builder.setMessage(getString(R.string.error_login2))
         builder.setPositiveButton(getString(R.string.infoAcceptar), null)
         val dialog: AlertDialog = builder.create()
         dialog.show()

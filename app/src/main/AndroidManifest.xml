@@ -10,25 +10,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCatedraUnesco">
         <activity
-            android:name=".ActivityRegistre3"
-            android:exported="false" />
+            android:name=".ActivityRegistro3"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".ActivityRegistre2"
-            android:exported="false" />
+            android:name=".ActivityRegistro2"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".ActivityRegistre1"
-            android:exported="false" />
+            android:name=".ActivityRegistro1"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ActivityLogin"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ActivityLogin"
+            android:exported="false"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

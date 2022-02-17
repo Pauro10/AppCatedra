@@ -6,26 +6,26 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
 import androidx.databinding.DataBindingUtil
-import edu.upc.appcatedraunesco.databinding.ActivityRegistre1Binding
+import edu.upc.appcatedraunesco.databinding.ActivityRegistro1Binding
 
-class ActivityRegistre1 : AppCompatActivity() {
+class ActivityRegistro1 : AppCompatActivity() {
 
-    private lateinit var bindingRegistre1: ActivityRegistre1Binding
+    private lateinit var bindingRegistro1: ActivityRegistro1Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        bindingRegistre1 = DataBindingUtil.setContentView(this, R.layout.activity_registre1)
+        bindingRegistro1 = DataBindingUtil.setContentView(this, R.layout.activity_registro1)
 
-        // Boto Tornar Enrrere
-        this.bindingRegistre1.btnTornar.setOnClickListener {
+        // Listener para boton volver
+        this.bindingRegistro1.btnVolver.setOnClickListener {
             cambiarPantalla(it, 0)
         }
 
         // Next Signup Screen
-        this.bindingRegistre1.btnSeguent.setOnClickListener {
+        this.bindingRegistro1.btnSiguiente.setOnClickListener {
 
-            if( !comprovarCamps(it) ){
+            if( !comprovarCampos(it) ){
                 return@setOnClickListener
             }
 
@@ -33,8 +33,8 @@ class ActivityRegistre1 : AppCompatActivity() {
             cambiarPantalla(it, 1)
         }
 
-        // Pantalla Identifica't
-        this.bindingRegistre1.txtIdentificar.setOnClickListener {
+        // Pantalla Identificarse
+        this.bindingRegistro1.txtIdentificar.setOnClickListener {
             cambiarPantalla(it, 2)
         }
 
@@ -52,12 +52,12 @@ class ActivityRegistre1 : AppCompatActivity() {
             }
             1 -> {
                 // Següent
-                intent = Intent( applicationContext, ActivityRegistre2::class.java ).apply {
+                intent = Intent( applicationContext, ActivityRegistro2::class.java ).apply {
                     // Preparamos los datos del usuario
-                    this.putExtra("EXTRA_SESSION_NOMCOMPLERT", bindingRegistre1.tfNom.text.toString() )
-                    this.putExtra("EXTRA_SESSION_DNI", bindingRegistre1.tfDni.text.toString() )
-                    this.putExtra("EXTRA_SESSION_CORREU", bindingRegistre1.tfMail.text.toString() )
-                    this.putExtra("EXTRA_SESSION_PASSWORD", bindingRegistre1.tfContrasena.text.toString() )
+                    this.putExtra("EXTRA_SESSION_NOMCOMPLERT", bindingRegistro1.tfNombre.text.toString() )
+                    this.putExtra("EXTRA_SESSION_DNI", bindingRegistro1.tfDni.text.toString() )
+                    this.putExtra("EXTRA_SESSION_CORREU", bindingRegistro1.tfMail.text.toString() )
+                    this.putExtra("EXTRA_SESSION_PASSWORD", bindingRegistro1.tfContrasena.text.toString() )
                 }
             }
             2 -> {
@@ -75,20 +75,20 @@ class ActivityRegistre1 : AppCompatActivity() {
         finish()
     }
 
-    private fun comprovarCamps(view: View): Boolean {
+    private fun comprovarCampos(view: View): Boolean {
 
         // Validate password
-        return if( this.bindingRegistre1.tfContrasena.text.toString() == "" || this.bindingRegistre1.tfContrasena.text.toString().length < 6 ) {
-            view.snack("La contrasenya ha de contenir més de 6 caràcters")
+        return if( this.bindingRegistro1.tfContrasena.text.toString() == "" || this.bindingRegistro1.tfContrasena.text.toString().length < 6 ) {
+            view.snack((getString(R.string.error_pass)))
             false
-        } else if( this.bindingRegistre1.tfMail.text.toString() == "" || !this.bindingRegistre1.tfMail.text.toString().contains(regex = email_Param.toRegex())) {
-            view.snack("Has d'introduir un correu vàlid")
+        } else if( this.bindingRegistro1.tfMail.text.toString() == "" || !this.bindingRegistro1.tfMail.text.toString().contains(regex = email_Param.toRegex())) {
+            view.snack((getString(R.string.error_mail)))
             false
-        } else if( this.bindingRegistre1.tfDni.text.toString() == "" ) {
-            view.snack("No pots deixar sense omplir el DNI")
+        } else if( this.bindingRegistro1.tfDni.text.toString() == "" ) {
+            view.snack((getString(R.string.error_dni)))
             false
-        } else if( this.bindingRegistre1.tfNom.text.toString() == "" ) {
-            view.snack("No pots deixar sense omplir el nom")
+        } else if( this.bindingRegistro1.tfNombre.text.toString() == "" ) {
+            view.snack((getString(R.string.error_nombre)))
             false
         } else{
             true

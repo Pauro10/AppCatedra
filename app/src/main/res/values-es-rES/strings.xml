@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AppCatedraUnesco</string>
+    <string name="login_sucs">Inicio de sesión correcto</string>
+    <string name="error_campos">Tienes que introducir los campos solicitados</string>
+    <string name="error_login">Error inicio de sesión</string>
+    <string name="error_login2">Se ha producido un error al iniciar sesión</string>
+    <string name="infoAcceptar">Aceptar</string>
+    <string name="error_pass">La contraseña debe contener más de 6 caracteres</string>
+    <string name="error_mail">Tienes que introducir un correo válido</string>
+    <string name="error_dni">No puedes dejar sin rellenar el DNI</string>
+    <string name="error_nombre">No puedes dejar sin rellenar el nombre</string>
+    <string name="error_telefono">Tienes que introducir un número de teléfono válido</string>
+    <string name="error_registro">No hemos podido registrarte</string>
+    <string name="error_envia_mail">Error al enviar el correo electrónico</string>
+    <string name="error_formato_mail">El formato del email es inválido</string>
+    <string name="mail_sucs">¡Correo enviado correctamente!</string>
+    <string name="revisa_mail">Revisa tu correo electrónico para cambiar la contraseña</string>
 </resources>

@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AppCatedraUnesco</string>
+    <string name="login_sucs">Login successful</string>
+    <string name="error_campos">You must enter the required fields</string>
+    <string name="error_login">Login error</string>
+    <string name="error_login2">There was an error signing in</string>
+    <string name="infoAcceptar">Accept</string>
+    <string name="error_pass">Password must be longer than 6 characters</string>
+    <string name="error_mail">You must enter a valid email address</string>
+    <string name="error_dni">You can\'t leave without filling out your ID</string>
+    <string name="error_nombre">You can\'t leave without filling in the name</string>
+    <string name="error_telefono">You must enter a valid phone number</string>
+    <string name="error_registro">We were unable to register you</string>
+    <string name="error_envia_mail">Error sending email</string>
+    <string name="error_formato_mail">Email format is invalid</string>
+    <string name="mail_sucs">Mail sent successfully!</string>
+    <string name="revisa_mail">Please check your email to change your password</string>
 </resources>

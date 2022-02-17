@@ -39,18 +39,18 @@ class RecuperarPasswordFragment : DialogFragment() {
                         showAlert()
                         //view?.snack("Correu enviat correctament!")
                     } else {
-                        view?.snack("Error en enviar el correu electrònic")
+                        view?.snack(getString(R.string.error_envia_mail))
                     }
                 }
         } else {
-            view?.snack("El format de l'email és invàlid")
+            view?.snack(getString(R.string.error_formato_mail))
         }
     }
 
     private fun showAlert() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setTitle("Correu enviat correctament!")
-        builder.setMessage("Revisa el teu correu electrònic per canviar la contrasenya")
+        builder.setTitle(getString(R.string.mail_sucs))
+        builder.setMessage(R.string.revisa_mail)
         builder.setPositiveButton(getString(R.string.infoAcceptar), null)
         val dialog: AlertDialog = builder.create()
         dialog.show()

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AppCatedraUnesco</string>
+    <string name="login_sucs">Inici de sessió correcte</string>
+    <string name="error_campos">Has d\'introduir els camps demanats</string>
+    <string name="error_login">Error inici de sessió</string>
+    <string name="error_login2">S\'ha produït un error en iniciar sessió</string>
+    <string name="infoAcceptar">Acceptar</string>
+    <string name="error_pass">La contrasenya ha de contenir més de 6 caràcters</string>
+    <string name="error_mail">Has d\'introduir un correu vàlid</string>
+    <string name="error_dni">No pots deixar sense omplir el DNI</string>
+    <string name="error_nombre">No pots deixar sense omplir el nom</string>
+    <string name="error_telefono">Has d\'introduir un número de telèfon vàlid</string>
+    <string name="error_registro">No hem pogut registrar-te</string>
+    <string name="error_envia_mail">Error en enviar el correu electrònic</string>
+    <string name="error_formato_mail">El format de l\'email és invàlid</string>
+    <string name="mail_sucs">Correu enviat correctament!</string>
+    <string name="revisa_mail">Revisa el teu correu electrònic per canviar la contrasenya</string>
+</resources>

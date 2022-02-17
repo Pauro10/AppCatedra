@@ -6,65 +6,65 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
 import androidx.databinding.DataBindingUtil
-import edu.upc.appcatedraunesco.databinding.ActivityRegistre2Binding
+import edu.upc.appcatedraunesco.databinding.ActivityRegistro2Binding
 
-class ActivityRegistre2 : AppCompatActivity() {
+class ActivityRegistro2 : AppCompatActivity() {
 
-    private lateinit var bindingRegistre2: ActivityRegistre2Binding
+    private lateinit var bindingRegistro2: ActivityRegistro2Binding
 
     // User variables
-    private lateinit var tDataNaixement: String
-    private lateinit var tGender: String
-    private lateinit var tNomComplert: String
+    private lateinit var tFechaNacimiento: String
+    private lateinit var tGenero: String
+    private lateinit var tNombreCompleto: String
     private lateinit var tNif: String
     private lateinit var tEmail: String
     private lateinit var tPassword: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingRegistre2 = DataBindingUtil.setContentView(this, R.layout.activity_registre2)
+        bindingRegistro2 = DataBindingUtil.setContentView(this, R.layout.activity_registro2)
 
-        // Informació Usuari
-        this.tNomComplert  = intent.getStringExtra("EXTRA_SESSION_NOMCOMPLERT").toString()
+        // Informació Usuario
+        this.tNombreCompleto  = intent.getStringExtra("EXTRA_SESSION_NOMCOMPLERT").toString()
         this.tNif  = intent.getStringExtra("EXTRA_SESSION_DNI").toString()
         this.tEmail     = intent.getStringExtra("EXTRA_SESSION_CORREU").toString()
         this.tPassword  = intent.getStringExtra("EXTRA_SESSION_PASSWORD").toString()
 
         // LISTENERS
 
-        // Pantalla registre següent
-        this.bindingRegistre2.btnSeguent.setOnClickListener {
+        // Pantalla registro siguiente
+        this.bindingRegistro2.btnSiguiente.setOnClickListener {
 
-            it.snack("$tNomComplert($tNif),email:$tEmail --> $tPassword")
+            it.snack("$tNombreCompleto($tNif),email:$tEmail --> $tPassword")
 
             // Validate DatePicker
-            val selectedDay: Int = this.bindingRegistre2.dpNacimiento.dayOfMonth
-            val selectedMonth: Int = this.bindingRegistre2.dpNacimiento.month + 1
-            val selectedYear: Int = this.bindingRegistre2.dpNacimiento.year
-            this.tDataNaixement = "$selectedDay/$selectedMonth/$selectedYear"
+            val selectedDay: Int = this.bindingRegistro2.dpNacimiento.dayOfMonth
+            val selectedMonth: Int = this.bindingRegistro2.dpNacimiento.month + 1
+            val selectedYear: Int = this.bindingRegistro2.dpNacimiento.year
+            this.tFechaNacimiento = "$selectedDay/$selectedMonth/$selectedYear"
 
             // Validació RadioButtons
             when {
-                this.bindingRegistre2.rbFemale.isChecked -> {
-                    this.tGender = "F"
+                this.bindingRegistro2.rbFemale.isChecked -> {
+                    this.tGenero = "F"
                 }
-                this.bindingRegistre2.rbMale.isChecked -> {
-                    this.tGender = "M"
+                this.bindingRegistro2.rbMale.isChecked -> {
+                    this.tGenero = "M"
                 }
                 else -> {
-                    this.tGender = "O"
+                    this.tGenero = "O"
                 }
             }
             cambiarPantalla(it, 2)
         }
 
         // Pantalla Login
-        this.bindingRegistre2.txtIdentificar.setOnClickListener {
+        this.bindingRegistro2.txtIdentificar.setOnClickListener {
             cambiarPantalla(it, 1)
         }
 
         // Pantalla Back
-        this.bindingRegistre2.btnTornar.setOnClickListener {
+        this.bindingRegistro2.btnVolver.setOnClickListener {
             cambiarPantalla(it, 0)
         }
 
@@ -84,14 +84,14 @@ class ActivityRegistre2 : AppCompatActivity() {
                 intent = Intent(applicationContext, ActivityLogin::class.java)
             }
             2 -> {
-                // Pantalla registre
-                intent = Intent(applicationContext, ActivityRegistre3::class.java).apply {
-                    this.putExtra("EXTRA_SESSION_NOMCOMPLERT", tNomComplert )
+                // Pantalla registro 3
+                intent = Intent(applicationContext, ActivityRegistro3::class.java).apply {
+                    this.putExtra("EXTRA_SESSION_NOMCOMPLERT", tNombreCompleto )
                     this.putExtra("EXTRA_SESSION_CORREU", tEmail )
                     this.putExtra("EXTRA_SESSION_PASSWORD", tPassword )
                     this.putExtra("EXTRA_SESSION_DNI", tNif )
-                    this.putExtra("EXTRA_SESSION_GENDER", tGender )
-                    this.putExtra("EXTRA_SESSION_DATANAIXEMENT", tDataNaixement )
+                    this.putExtra("EXTRA_SESSION_GENDER", tGenero )
+                    this.putExtra("EXTRA_SESSION_DATANAIXEMENT", tFechaNacimiento )
                 }
             }
         }

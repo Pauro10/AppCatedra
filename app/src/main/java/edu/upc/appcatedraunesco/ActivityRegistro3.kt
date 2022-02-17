@@ -12,12 +12,12 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import edu.upc.appcatedraunesco.databinding.ActivityRegistre3Binding
+import edu.upc.appcatedraunesco.databinding.ActivityRegistro3Binding
 import edu.upc.appcatedraunesco.models.Usuari
 
-class ActivityRegistre3 : AppCompatActivity() {
+class ActivityRegistro3 : AppCompatActivity() {
 
-    private lateinit var bindingRegistre3: ActivityRegistre3Binding
+    private lateinit var bindingRegistro3: ActivityRegistro3Binding
     private lateinit var auth: FirebaseAuth
 
     private lateinit var database: FirebaseDatabase
@@ -25,19 +25,19 @@ class ActivityRegistre3 : AppCompatActivity() {
 
     private var showSnack: Boolean = false
 
-    private lateinit var tDataNaixement: String
+    private lateinit var tFechaNacimiento: String
     private lateinit var tGender: String
-    private lateinit var tNomComplert: String
+    private lateinit var tNombreCompleto: String
     private lateinit var tNif: String
     private lateinit var tEmail: String
     private lateinit var tPassword: String
-    private lateinit var tNumeroTelefon: String
+    private lateinit var tNumeroTelefono: String
     private lateinit var tUid: String
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingRegistre3 = DataBindingUtil.setContentView(this, R.layout.activity_registre3)
+        bindingRegistro3 = DataBindingUtil.setContentView(this, R.layout.activity_registro3)
 
         // Initialize Firebase Auth
         this.auth = FirebaseAuth.getInstance()
@@ -45,29 +45,29 @@ class ActivityRegistre3 : AppCompatActivity() {
         // Instanciate database
         database = FirebaseDatabase.getInstance()
         // Reference working document
-        reference = database.getReference("USUARI/CLIENT")
+        reference = database.getReference("USUARIO/CLIENTE")
 
-        // Informació Usuari
-        this.tNomComplert = intent.getStringExtra("EXTRA_SESSION_NOMCOMPLERT").toString()
+        // Información Usuario
+        this.tNombreCompleto = intent.getStringExtra("EXTRA_SESSION_NOMBRECOMPLETO").toString()
         this.tNif = intent.getStringExtra("EXTRA_SESSION_DNI").toString()
-        this.tEmail = intent.getStringExtra("EXTRA_SESSION_CORREU").toString()
+        this.tEmail = intent.getStringExtra("EXTRA_SESSION_MAIL").toString()
         this.tPassword = intent.getStringExtra("EXTRA_SESSION_PASSWORD").toString()
         this.tGender = intent.getStringExtra("EXTRA_SESSION_GENDER").toString()
-        this.tDataNaixement = intent.getStringExtra("EXTRA_SESSION_DATANAIXEMENT").toString()
+        this.tFechaNacimiento = intent.getStringExtra("EXTRA_SESSION_FECHANACIMIENTO").toString()
 
         // Back Screenn
-        this.bindingRegistre3.btnTornar.setOnClickListener {
+        this.bindingRegistro3.btnVolver.setOnClickListener {
             cambiarPantalla(it, 0)
         }
 
         // Login Screen
-        this.bindingRegistre3.txtIdentificar.setOnClickListener {
+        this.bindingRegistro3.txtIdentificar.setOnClickListener {
             cambiarPantalla(it, 1)
         }
 
         // Validate Signup
-        this.bindingRegistre3.btnFinalitza.setOnClickListener {
-            if (comprovarCamps(it)) {
+        this.bindingRegistro3.btnFinalizar.setOnClickListener {
+            if (comprovarCampos(it)) {
                 signUp(it, this.tEmail, this.tPassword)
             } else {
                 return@setOnClickListener
@@ -83,7 +83,7 @@ class ActivityRegistre3 : AppCompatActivity() {
         when (option) {
             0 -> {
                 // Back Screen
-                intent = Intent(applicationContext, ActivityRegistre2::class.java)
+                intent = Intent(applicationContext, ActivityRegistro2::class.java)
             }
             1 -> {
                 // Login Screen
@@ -103,9 +103,9 @@ class ActivityRegistre3 : AppCompatActivity() {
         finish()
     }
 
-    private fun comprovarCamps(view: View): Boolean {
-        return if (this.bindingRegistre3.tfTel.text.toString() == "" || this.bindingRegistre3.tfTel.text.toString().length != 9) {
-            view.snack("Has d'introduir un número de telèfon vàlid")
+    private fun comprovarCampos(view: View): Boolean {
+        return if (this.bindingRegistro3.tfTel.text.toString() == "" || this.bindingRegistro3.tfTel.text.toString().length != 9) {
+            view.snack(getString(R.string.error_telefono))
             false
         } else {
             true
@@ -123,7 +123,7 @@ class ActivityRegistre3 : AppCompatActivity() {
                     showSnack = true
                     cambiarPantalla(view, 1)
                 } else {
-                    view.snack("No hem pogut registrar-te")
+                    view.snack(getString(R.string.error_registro))
                 }
             }
     }
@@ -131,7 +131,7 @@ class ActivityRegistre3 : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     private fun referenceUserDatabase(view: View, user: FirebaseUser?) {
         //Collect user data
-        this.tNumeroTelefon = this.bindingRegistre3.tfTel.text.toString().trim()
+        this.tNumeroTelefono = this.bindingRegistro3.tfTel.text.toString().trim()
 
         if (user != null) {
             this.tUid = user.uid
@@ -140,12 +140,12 @@ class ActivityRegistre3 : AppCompatActivity() {
         }
         val userModel = Usuari(
             uidCliente = user.uid,
-            NomComplert = this.tNomComplert,
+            NomComplert = this.tNombreCompleto,
             correu = this.tEmail,
             nif = this.tNif,
             gender = this.tGender,
-            dataNaixement = this.tDataNaixement,
-            numeroTelefon = this.tNumeroTelefon,
+            dataNaixement = this.tFechaNacimiento,
+            numeroTelefon = this.tNumeroTelefono,
         )
 
         //val id = this.reference.push().key
