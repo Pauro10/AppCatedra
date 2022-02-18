@@ -16,4 +16,5 @@
     <string name="error_formato_mail">Email format is invalid</string>
     <string name="mail_sucs">Mail sent successfully!</string>
     <string name="revisa_mail">Please check your email to change your password</string>
+    <string name="powered_by">Developed by Cátedra UNESCO</string>
 </resources>

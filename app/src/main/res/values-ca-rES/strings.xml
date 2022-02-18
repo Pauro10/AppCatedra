@@ -16,4 +16,5 @@
     <string name="error_formato_mail">El format de l\'email és invàlid</string>
     <string name="mail_sucs">Correu enviat correctament!</string>
     <string name="revisa_mail">Revisa el teu correu electrònic per canviar la contrasenya</string>
+    <string name="powered_by">Desenvolupat per Càtedra UNSECO</string>
 </resources>
