@@ -65,15 +65,15 @@
                 android:src="@drawable/ic_home_dark" />
 
             <ImageView
-                android:id="@+id/btnTrends"
+                android:id="@+id/btnNoticias"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
-                android:src="@drawable/ic__notes_dark" />
+                android:src="@drawable/ic_notes_dark" />
 
             <ImageView
-                android:id="@+id/btnAdd"
+                android:id="@+id/btnMapa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="15dp"
@@ -81,7 +81,7 @@
                 android:src="@drawable/ic_map_dark" />
 
             <ImageView
-                android:id="@+id/btnSocial"
+                android:id="@+id/btnProductos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="15dp"
@@ -89,7 +89,7 @@
                 android:src="@drawable/ic_interests_dark" />
 
             <ImageView
-                android:id="@+id/btnNotify"
+                android:id="@+id/btnInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="15dp"

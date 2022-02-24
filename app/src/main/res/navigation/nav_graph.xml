@@ -10,4 +10,49 @@
         android:name="edu.upc.appcatedraunesco.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home"/>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="edu.upc.appcatedraunesco.InfoFragment"
+        android:label="InfoFragment"
+        tools:layout="@layout/fragment_info"/>
+    <fragment
+        android:id="@+id/noticiasFragment"
+        android:name="edu.upc.appcatedraunesco.NoticiasFragment"
+        android:label="NoticiasFragment"
+        tools:layout="@layout/fragment_noticias"/>
+    <fragment
+        android:id="@+id/productosFragment"
+        android:name="edu.upc.appcatedraunesco.ProductosFragment"
+        android:label="ProductosFragment"
+        tools:layout="@layout/fragment_productos"/>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="edu.upc.appcatedraunesco.MapsFragment"
+        android:label="MapsFragment"
+        tools:layout="@layout/fragment_maps"/>
+    <action
+        android:id="@+id/action_to_homeFragment"
+        app:destination="@id/homeFragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit"/>
+    <action
+        android:id="@+id/action_to_infoFragment"
+        app:destination="@id/infoFragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit"/>
+    <action
+        android:id="@+id/action_to_noticiasFragment"
+        app:destination="@id/noticiasFragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit"/>
+    <action
+        android:id="@+id/action_to_productosFragment"
+        app:destination="@id/productosFragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit"/>
+    <action
+        android:id="@+id/action_to_mapsFragment"
+        app:destination="@id/mapsFragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit" />
 </navigation>

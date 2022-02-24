@@ -17,4 +17,8 @@
     <string name="mail_sucs">Mail sent successfully!</string>
     <string name="revisa_mail">Please check your email to change your password</string>
     <string name="powered_by">Developed by Cátedra UNESCO</string>
+    <string name="language_es">Spanish</string>
+    <string name="language_en">English</string>
+    <string name="language_ca">Catalan</string>
+    <string name="settingsfragment_selectlang">Select language</string>
 </resources>

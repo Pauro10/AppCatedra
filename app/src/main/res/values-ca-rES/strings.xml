@@ -17,4 +17,8 @@
     <string name="mail_sucs">Correu enviat correctament!</string>
     <string name="revisa_mail">Revisa el teu correu electrònic per canviar la contrasenya</string>
     <string name="powered_by">Desenvolupat per Càtedra UNSECO</string>
+    <string name="language_es">Espanyol</string>
+    <string name="language_en">Anglès</string>
+    <string name="language_ca">Català</string>
+    <string name="settingsfragment_selectlang">Selecciona idioma</string>
 </resources>

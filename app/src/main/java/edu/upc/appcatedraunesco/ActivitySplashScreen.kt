@@ -1,7 +1,9 @@
 package edu.upc.appcatedraunesco
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -10,6 +12,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
+import java.util.*
 
 class ActivitySplashScreen : AppCompatActivity() {
 
@@ -28,6 +31,7 @@ class ActivitySplashScreen : AppCompatActivity() {
 
         fullScreenMode()
         setContentView(R.layout.activity_splash_screen)
+
 
         // Hooks
         backgroundImage = findViewById(R.id.background_image)
