@@ -7,6 +7,7 @@ import android.view.View
 import android.view.WindowManager
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import com.google.firebase.auth.FirebaseAuth
 import edu.upc.appcatedraunesco.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,37 +18,85 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingMainActivity = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        bindingMainActivity.btnProfile.setOnClickListener{
-            val intent = Intent(this, ActivityLogin::class.java)
-            startActivity(intent)
-        }
-
         fullScreenMode()
 
-        bindingMainActivity.btnHome.setOnClickListener {
-            findNavController(R.id.fragmentContainer).navigate(R.id.action_to_homeFragment)
+        if (FirebaseAuth.getInstance().currentUser == null){
+            bindingMainActivity.btnInfo.setVisibility(View.VISIBLE)
+            bindingMainActivity.btnAdmin.setVisibility(View.GONE)
+        } else {
+            bindingMainActivity.btnInfo.setVisibility(View.GONE)
+            bindingMainActivity.btnAdmin.setVisibility(View.VISIBLE)
         }
 
-        bindingMainActivity.btnMapa.setOnClickListener {
+        // Paint Maps Icon ( Default onStart )
+        this.changeBottomMenuIcon(0)
+
+        bindingMainActivity.btnSettings.setOnClickListener {
+            findNavController(R.id.fragmentContainer).navigate(R.id.action_to_opcionesFragment)
+            this.changeBottomMenuIcon(4)
         }
 
         bindingMainActivity.btnNoticias.setOnClickListener {
             findNavController(R.id.fragmentContainer).navigate(R.id.action_to_noticiasFragment)
+            this.changeBottomMenuIcon(3)
         }
 
         bindingMainActivity.btnProductos.setOnClickListener {
             findNavController(R.id.fragmentContainer).navigate(R.id.action_to_productosFragment)
+            this.changeBottomMenuIcon(2)
         }
 
         bindingMainActivity.btnInfo.setOnClickListener {
             findNavController(R.id.fragmentContainer).navigate(R.id.action_to_infoFragment)
+            this.changeBottomMenuIcon(1)
         }
 
         bindingMainActivity.btnMapa.setOnClickListener {
             findNavController(R.id.fragmentContainer).navigate(R.id.action_to_mapsFragment)
+            this.changeBottomMenuIcon(0)
+        }
+
+        bindingMainActivity.btnAdmin.setOnClickListener {
+            findNavController(R.id.fragmentContainer).navigate(R.id.action_to_adminFragment)
+            this.changeBottomMenuIcon(5)
         }
 
     }
+
+    private fun changeBottomMenuIcon( option: Int ){
+
+        this.bindingMainActivity.btnSettings.setImageResource(R.drawable.ic_settings_bright)
+        this.bindingMainActivity.btnInfo.setImageResource(R.drawable.ic_info_bright)
+        this.bindingMainActivity.btnProductos.setImageResource(R.drawable.ic_interests_bright)
+        this.bindingMainActivity.btnNoticias.setImageResource(R.drawable.ic_notes_bright)
+        this.bindingMainActivity.btnMapa.setImageResource(R.drawable.ic_map_bright)
+        this.bindingMainActivity.btnAdmin.setImageResource(R.drawable.ic_admin_panel_settings_bright)
+
+
+        when(option){
+            5 -> this.bindingMainActivity.btnAdmin.setImageResource(R.drawable.ic_admin_panel_settings_dark)
+            4 -> this.bindingMainActivity.btnSettings.setImageResource(R.drawable.ic_settings)
+            1 -> this.bindingMainActivity.btnInfo.setImageResource(R.drawable.ic_info_dark)
+            2 -> this.bindingMainActivity.btnProductos.setImageResource(R.drawable.ic_interests_dark)
+            3 -> this.bindingMainActivity.btnNoticias.setImageResource(R.drawable.ic_notes_dark)
+            0 -> this.bindingMainActivity.btnMapa.setImageResource(R.drawable.ic_map_dark)
+        }
+    }
+
+    /*fun setBottomMenuNavigation( option: Boolean ){
+        when(option) {
+            true -> this.bindingMainActivity.bottomMenuNavigation.visibility = View.VISIBLE
+            false -> this.bindingMainActivity.bottomMenuNavigation.visibility = View.INVISIBLE
+        }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val action = NavGraphDirections.actionToHomeFragment()
+        setBottomMenuNavigation(true)
+        changeBottomMenuIcon(0)
+        findNavController(R.id.fragmentContainer).navigate(action)
+    }*/
 
     private fun  fullScreenMode(){
         // Hide actionBar and fullScreen mode
@@ -55,31 +104,6 @@ class MainActivity : AppCompatActivity() {
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
-    }
-
-    private fun changeBottomMenuIcon( option: Int ){
-
-        this.bindingMainActivity.btnHome.setImageResource(R.drawable.ic_home_dark)
-        this.bindingMainActivity.btnInfo.setImageResource(R.drawable.ic_info_dark)
-        this.bindingMainActivity.btnProductos.setImageResource(R.drawable.ic_interests_dark)
-        this.bindingMainActivity.btnNoticias.setImageResource(R.drawable.ic_notes_dark)
-        this.bindingMainActivity.btnMapa.setImageResource(R.drawable.ic_map_dark)
-
-
-        /*when(option){
-            0 -> this.bindingMainActivity.btnHome.setImageResource(R.drawable.ic_home_yellow)
-            1 -> this.bindingMainActivity.btnInfo.setImageResource(R.drawable.ic_trends_yellow)
-            2 -> this.bindingMainActivity.btnProductos.setImageResource(R.drawable.ic_add_yellow)
-            3 -> this.bindingMainActivity.btnNoticias.setImageResource(R.drawable.ic_social_yellow)
-            4 -> this.bindingMainActivity.btnMapa.setImageResource(R.drawable.ic_notify_yellow)
-        }*/
-    }
-
-    fun setBottomMenuNavigation( option: Boolean ){
-        when(option) {
-            true -> this.bindingMainActivity.bottomMenuNavigation.visibility = View.VISIBLE
-            false -> this.bindingMainActivity.bottomMenuNavigation.visibility = View.INVISIBLE
-        }
     }
 
 

@@ -3,13 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/mapsFragment">
 
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="edu.upc.appcatedraunesco.HomeFragment"
-        android:label="HomeFragment"
-        tools:layout="@layout/fragment_home"/>
+
     <fragment
         android:id="@+id/infoFragment"
         android:name="edu.upc.appcatedraunesco.InfoFragment"
@@ -30,11 +26,22 @@
         android:name="edu.upc.appcatedraunesco.MapsFragment"
         android:label="MapsFragment"
         tools:layout="@layout/fragment_maps"/>
-    <action
-        android:id="@+id/action_to_homeFragment"
-        app:destination="@id/homeFragment"
-        app:enterAnim="@anim/fragment_fade_enter"
-        app:exitAnim="@anim/fragment_fade_exit"/>
+    <fragment
+        android:id="@+id/opcionesFragment"
+        android:name="edu.upc.appcatedraunesco.OpcionesFragment"
+        android:label="OpcionesFragment"
+        tools:layout="@layout/fragment_opciones"/>
+    <fragment
+        android:id="@+id/informarProblemaFragment"
+        android:name="edu.upc.appcatedraunesco.InformarProblemaFragment"
+        android:label="InformarProblemaFragment"
+        tools:layout="@layout/fragment_informar_problema"/>
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="edu.upc.appcatedraunesco.AdminFragment"
+        android:label="AdminFragment"
+        tools:layout="@layout/fragment_admin"/>
+
     <action
         android:id="@+id/action_to_infoFragment"
         app:destination="@id/infoFragment"
@@ -55,4 +62,20 @@
         app:destination="@id/mapsFragment"
         app:enterAnim="@anim/fragment_fade_enter"
         app:exitAnim="@anim/fragment_fade_exit" />
+    <action
+        android:id="@+id/action_to_opcionesFragment"
+        app:destination="@id/opcionesFragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit" />
+    <action
+        android:id="@+id/action_to_informarProblemaFragment"
+        app:destination="@id/informarProblemaFragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit" />
+    <action
+        android:id="@+id/action_to_adminFragment"
+        app:destination="@id/adminFragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit" />
+
 </navigation>

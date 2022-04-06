@@ -47,16 +47,16 @@ class ActivityLogin : AppCompatActivity() {
         referencia = FirebaseDatabase.getInstance().reference.child("USUARIO/CLIENTE")
         userId = auth.currentUser?.uid.toString()
 
-        bindingLogin.txtRegistro.setOnClickListener {
+        /*bindingLogin.txtRegistro.setOnClickListener {
             val intent = Intent(this, ActivityRegistro1::class.java)
             startActivity(intent)
-        }
+        }*/
 
         bindingLogin.btnIdentificarse.setOnClickListener {
             login(it)
         }
 
-        bindingLogin.btnGoogle.setOnClickListener {
+        /*bindingLogin.btnGoogle.setOnClickListener {
             val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -65,16 +65,20 @@ class ActivityLogin : AppCompatActivity() {
             googleSignInClient = GoogleSignIn.getClient(this, gso)
 
             signIn()
-        }
+        }*/
 
         bindingLogin.claveOlvidada.setOnClickListener {
-            val dialog = RecuperarPasswordFragment()
-            dialog.show(supportFragmentManager, "recuperarPassword")
+            /*val dialog = RecuperarPasswordFragment()
+            dialog.show(supportFragmentManager, "recuperarPassword")*/
         }
 
         // Recordar cuenta
         bindingLogin.cbRecuerdame.setOnClickListener {
             remember = !remember
+        }
+
+        bindingLogin.btnAtras.setOnClickListener {
+            getFragmentManager()?.popBackStack()
         }
 
         fullScreenMode()

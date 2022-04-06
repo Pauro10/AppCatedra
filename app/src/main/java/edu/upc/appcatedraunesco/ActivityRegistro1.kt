@@ -54,9 +54,9 @@ class ActivityRegistro1 : AppCompatActivity() {
                 // Següent
                 intent = Intent( applicationContext, ActivityRegistro2::class.java ).apply {
                     // Preparamos los datos del usuario
-                    this.putExtra("EXTRA_SESSION_NOMCOMPLERT", bindingRegistro1.tfNombre.text.toString() )
+                    this.putExtra("EXTRA_SESSION_NOMBRECOMPLETO", bindingRegistro1.tfNombre.text.toString() )
                     this.putExtra("EXTRA_SESSION_DNI", bindingRegistro1.tfDni.text.toString() )
-                    this.putExtra("EXTRA_SESSION_CORREU", bindingRegistro1.tfMail.text.toString() )
+                    this.putExtra("EXTRA_SESSION_CORREO", bindingRegistro1.tfMail.text.toString() )
                     this.putExtra("EXTRA_SESSION_PASSWORD", bindingRegistro1.tfContrasena.text.toString() )
                 }
             }

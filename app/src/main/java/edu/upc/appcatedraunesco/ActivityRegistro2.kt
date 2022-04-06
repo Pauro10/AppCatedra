@@ -25,9 +25,9 @@ class ActivityRegistro2 : AppCompatActivity() {
         bindingRegistro2 = DataBindingUtil.setContentView(this, R.layout.activity_registro2)
 
         // Informació Usuario
-        this.tNombreCompleto  = intent.getStringExtra("EXTRA_SESSION_NOMCOMPLERT").toString()
+        this.tNombreCompleto  = intent.getStringExtra("EXTRA_SESSION_NOMBRECOMPLETO").toString()
         this.tNif  = intent.getStringExtra("EXTRA_SESSION_DNI").toString()
-        this.tEmail     = intent.getStringExtra("EXTRA_SESSION_CORREU").toString()
+        this.tEmail     = intent.getStringExtra("EXTRA_SESSION_CORREO").toString()
         this.tPassword  = intent.getStringExtra("EXTRA_SESSION_PASSWORD").toString()
 
         // LISTENERS
@@ -86,12 +86,12 @@ class ActivityRegistro2 : AppCompatActivity() {
             2 -> {
                 // Pantalla registro 3
                 intent = Intent(applicationContext, ActivityRegistro3::class.java).apply {
-                    this.putExtra("EXTRA_SESSION_NOMCOMPLERT", tNombreCompleto )
-                    this.putExtra("EXTRA_SESSION_CORREU", tEmail )
+                    this.putExtra("EXTRA_SESSION_NOMBRECOMPLETO", tNombreCompleto )
+                    this.putExtra("EXTRA_SESSION_CORREO", tEmail )
                     this.putExtra("EXTRA_SESSION_PASSWORD", tPassword )
                     this.putExtra("EXTRA_SESSION_DNI", tNif )
                     this.putExtra("EXTRA_SESSION_GENDER", tGenero )
-                    this.putExtra("EXTRA_SESSION_DATANAIXEMENT", tFechaNacimiento )
+                    this.putExtra("EXTRA_SESSION_FECHANACIMIENTO", tFechaNacimiento )
                 }
             }
         }

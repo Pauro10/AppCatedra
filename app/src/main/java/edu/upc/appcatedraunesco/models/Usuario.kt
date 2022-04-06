@@ -4,8 +4,8 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import java.io.Serializable
 
-class Usuari @RequiresApi(Build.VERSION_CODES.O) constructor(
-    var uidCliente: String,
+class Usuario @RequiresApi(Build.VERSION_CODES.O) constructor(
+    var uidUsuario: String,
     var NomComplert: String,
     var correu: String,
     var gender: String,

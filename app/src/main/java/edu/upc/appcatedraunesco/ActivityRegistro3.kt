@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import edu.upc.appcatedraunesco.databinding.ActivityRegistro3Binding
-import edu.upc.appcatedraunesco.models.Usuari
+import edu.upc.appcatedraunesco.models.Usuario
 
 class ActivityRegistro3 : AppCompatActivity() {
 
@@ -138,8 +138,8 @@ class ActivityRegistro3 : AppCompatActivity() {
         } else {
             return
         }
-        val userModel = Usuari(
-            uidCliente = user.uid,
+        val userModel = Usuario(
+            uidUsuario = user.uid,
             NomComplert = this.tNombreCompleto,
             correu = this.tEmail,
             nif = this.tNif,

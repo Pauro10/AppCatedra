@@ -6,19 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import edu.upc.appcatedraunesco.databinding.FragmentInfoBinding
+import edu.upc.appcatedraunesco.databinding.FragmentAdminBinding
 
+class AdminFragment : Fragment() {
 
-class InfoFragment : Fragment() {
-
-    private lateinit var bindingFragmentInfo: FragmentInfoBinding
+    private lateinit var bindingFragmentAdmin: FragmentAdminBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        this.bindingFragmentInfo = DataBindingUtil.inflate(inflater, R.layout.fragment_info, container, false)
-        return this.bindingFragmentInfo.root
+        this.bindingFragmentAdmin = DataBindingUtil.inflate(inflater, R.layout.fragment_admin, container, false)
+        return this.bindingFragmentAdmin.root
     }
+
 }

@@ -10,6 +10,15 @@
         android:padding="20dp"
         tools:context=".PantallaLogin">
 
+        <ImageView
+            android:id="@+id/btnAtras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/black" />
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
@@ -28,7 +37,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="55dp"
             android:hint="Introdueix Correu"
             app:boxStrokeColor="@color/black"
             app:boxStrokeWidthFocused="2dp"
@@ -54,7 +63,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="30dp"
             android:hint="Introdueix Contrasenya"
             app:boxStrokeColor="@color/black"
             app:boxStrokeWidthFocused="2dp"
@@ -75,32 +84,19 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+
         <TextView
             android:id="@+id/claveOlvidada"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="4dp"
             android:text="Has oblidat la contrasenya?"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tilContrasena" />
-
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:text="Identifica't amb"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.489"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/claveOlvidada" />
 
         <CheckBox
             android:id="@+id/cbRecuerdame"
@@ -114,48 +110,19 @@
             app:layout_constraintBaseline_toBaselineOf="@+id/claveOlvidada"
             app:layout_constraintStart_toStartOf="parent" />
 
+
         <Button
             android:id="@+id/btnIdentificarse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="140dp"
             android:backgroundTint="@color/black"
             android:text="Identificat"
             android:textColor="@color/white"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnGoogle" />
-
-        <TextView
-            android:id="@+id/txtRegistro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:text="CREA UN COMPTE"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnIdentificarse" />
-
-        <Button
-            android:id="@+id/btnGoogle"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="#F7F6F6"
-            android:drawableLeft="@drawable/ic_goggle_logo"
-            android:text="Google"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            app:borderWidth="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
+            app:layout_constraintTop_toBottomOf="@+id/claveOlvidada" />
 
         <ProgressBar
             android:id="@+id/progressBarLogin"

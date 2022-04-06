@@ -15,7 +15,7 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Introdueix el correu què vols canviar-li la contrasenya"
+            android:text="Describe el problema de la aplicación"
             android:textSize="15sp" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:hint="Introdueix Correu"
+            android:hint="Describe el problema"
             app:boxStrokeColor="@color/black"
             app:boxStrokeWidthFocused="2dp"
             app:endIconMode="clear_text"
@@ -33,11 +33,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:startIconDrawable="@drawable/ic_email_logo"
             app:startIconTint="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tfMail"
+                android:id="@+id/tfProblema"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="text" />
