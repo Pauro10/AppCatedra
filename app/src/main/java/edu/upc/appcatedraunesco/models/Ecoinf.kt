@@ -8,5 +8,7 @@ class Ecoinf @RequiresApi(Build.VERSION_CODES.O) constructor(
     var nombre: String,
     var numeroTelefono: String,
     var imagen: String,
-    var cordenadas: String,
+    var latitud: String,
+    var longitud: String,
+    var direccion: String,
 ) : Serializable

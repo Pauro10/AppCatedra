@@ -41,6 +41,26 @@
         android:name="edu.upc.appcatedraunesco.AdminFragment"
         android:label="AdminFragment"
         tools:layout="@layout/fragment_admin"/>
+    <fragment
+        android:id="@+id/addEcoinfFragment"
+        android:name="edu.upc.appcatedraunesco.AddEcoinfFragment"
+        android:label="AddEcoinfFragment"
+        tools:layout="@layout/fragment_add_ecoinf"/>
+    <fragment
+        android:id="@+id/addNoticiaFragment"
+        android:name="edu.upc.appcatedraunesco.AddNoticiaFragment"
+        android:label="AddNoticiaFragment"
+        tools:layout="@layout/fragment_add_noticia"/>
+    <fragment
+        android:id="@+id/addProducteFragment"
+        android:name="edu.upc.appcatedraunesco.AddProductoFragment"
+        android:label="AddProducteFragment"
+        tools:layout="@layout/fragment_add_producto"/>
+    <fragment
+        android:id="@+id/ecoinfFragment"
+        android:name="edu.upc.appcatedraunesco.EcoinfFragment"
+        android:label="EcoinfFragment"
+        tools:layout="@layout/fragment_ecoinf"/>
 
     <action
         android:id="@+id/action_to_infoFragment"
@@ -75,6 +95,26 @@
     <action
         android:id="@+id/action_to_adminFragment"
         app:destination="@id/adminFragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit" />
+    <action
+        android:id="@+id/action_to_addEcoinfFragment"
+        app:destination="@id/addEcoinfFragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit" />
+    <action
+        android:id="@+id/action_to_addNoticiaFragment"
+        app:destination="@id/addNoticiaFragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit" />
+    <action
+        android:id="@+id/action_to_addProducteFragment"
+        app:destination="@id/addProducteFragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit" />
+    <action
+        android:id="@+id/action_to_ecoinfFragment"
+        app:destination="@id/ecoinfFragment"
         app:enterAnim="@anim/fragment_fade_enter"
         app:exitAnim="@anim/fragment_fade_exit" />
 

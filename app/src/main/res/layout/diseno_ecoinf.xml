@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewNoticias"
+        android:id="@+id/cardViewEcoinf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -14,7 +14,7 @@
         app:contentPadding="3dp">
 
         <ImageView
-            android:id="@+id/cardViewNoticiasInterior"
+            android:id="@+id/cardViewEcoinfInterior"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#DAFFFFFF"
@@ -37,33 +37,43 @@
                 />
 
             <TextView
-                android:id="@+id/tvTitulo"
+                android:id="@+id/tvNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/heebo_medium"
-                android:text="Titulo"
+                android:text="Nombre"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="22dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/ivImagen"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tvDescripcion"
-                android:layout_width="259dp"
-                android:layout_height="78dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="2dp"
+                android:id="@+id/tvNumTel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="144dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/heebo_medium"
-                android:lines="5"
-                android:maxLines="5"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                android:text="Numero telefono"
                 android:textColor="@color/black"
-                android:textSize="12dp"
+                android:textSize="16dp"
                 app:layout_constraintStart_toEndOf="@+id/ivImagen"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
+                app:layout_constraintTop_toBottomOf="@+id/tvDirecion" />
 
+            <TextView
+                android:id="@+id/tvDirecion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/heebo_medium"
+                android:text="Direccion"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                app:layout_constraintStart_toEndOf="@+id/ivImagen"
+                app:layout_constraintTop_toBottomOf="@+id/tvNombre" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

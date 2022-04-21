@@ -21,4 +21,14 @@
     <string name="language_en">Anglès</string>
     <string name="language_ca">Català</string>
     <string name="settingsfragment_selectlang">Selecciona idioma</string>
+    <string name="txt_idenificat">IDENTIFICA\'T</string>
+    <string name="txt_intro_correo">Introdueix Correu</string>
+    <string name="txt_intro_password">Introdueix Contrasenya</string>
+    <string name="txt_password_olvidada">Has oblidat la contrasenya?</string>
+    <string name="txt_recordar">Recorda\'m</string>
+    <string name="txt_identificar">Iniciar Sessió</string>
+    <string name="txt_add_ecoinf">Afegir Ecoinfreastructura</string>
+    <string name="txt_add_producto">Afegir Producte</string>
+    <string name="txt_usuarios">Gestionar Usuaris</string>
+    <string name="txt_crear_noticia">Crear Notícia</string>
 </resources>

@@ -13,48 +13,52 @@
             android:id="@+id/btEcoinf"
             android:layout_width="300dp"
             android:layout_height="80dp"
-            android:text="Añadir Ecoinfreastructura"
+            android:text="@string/txt_add_ecoinf"
             app:layout_constraintBottom_toTopOf="@+id/btNoticia"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.632" />
+            app:layout_constraintVertical_bias="0.632"
+            android:backgroundTint="@color/black"/>
 
         <Button
             android:id="@+id/btProducto"
             android:layout_width="300dp"
             android:layout_height="80dp"
             android:layout_marginTop="32dp"
-            android:text="Añadir Producto"
+            android:text="@string/txt_add_producto"
             app:layout_constraintBottom_toTopOf="@+id/btUsuarios"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btNoticia"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0"
+            android:backgroundTint="@color/black"/>
 
         <Button
             android:id="@+id/btUsuarios"
             android:layout_width="300dp"
             android:layout_height="80dp"
-            android:text="Usuarios"
+            android:text="@string/txt_usuarios"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btProducto" />
+            app:layout_constraintTop_toBottomOf="@+id/btProducto"
+            android:backgroundTint="@color/black"/>
 
         <Button
             android:id="@+id/btNoticia"
             android:layout_width="300dp"
             android:layout_height="80dp"
-            android:text="Crear Noticia"
+            android:text="@string/txt_crear_noticia"
             app:layout_constraintBottom_toTopOf="@+id/btProducto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btEcoinf" />
+            app:layout_constraintTop_toBottomOf="@+id/btEcoinf"
+            android:backgroundTint="@color/black"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

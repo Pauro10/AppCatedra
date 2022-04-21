@@ -21,4 +21,14 @@
     <string name="language_en">English</string>
     <string name="language_ca">Catalan</string>
     <string name="settingsfragment_selectlang">Select language</string>
+    <string name="txt_idenificat">IDENTIFY</string>
+    <string name="txt_intro_correo">Enter Email</string>
+    <string name="txt_intro_password">Enter Password</string>
+    <string name="txt_password_olvidada">Did you forget your password?</string>
+    <string name="txt_recordar">Remind me</string>
+    <string name="txt_identificar">Log in</string>
+    <string name="txt_add_ecoinf">Add Ecoinfreastructure</string>
+    <string name="txt_add_producto">Add Product</string>
+    <string name="txt_usuarios">Manage Users</string>
+    <string name="txt_crear_noticia">Create News</string>
 </resources>
