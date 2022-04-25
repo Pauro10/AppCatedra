@@ -31,7 +31,7 @@
         android:name="edu.upc.appcatedraunesco.OpcionesFragment"
         android:label="OpcionesFragment"
         tools:layout="@layout/fragment_opciones"/>
-    <fragment
+    <dialog
         android:id="@+id/informarProblemaFragment"
         android:name="edu.upc.appcatedraunesco.InformarProblemaFragment"
         android:label="InformarProblemaFragment"
@@ -61,6 +61,24 @@
         android:name="edu.upc.appcatedraunesco.EcoinfFragment"
         android:label="EcoinfFragment"
         tools:layout="@layout/fragment_ecoinf"/>
+    <fragment
+        android:id="@+id/noticiaFragmentInfo"
+        android:name="edu.upc.appcatedraunesco.NoticiaFragmentInfo"
+        android:label="NoticiaFragmentInfo"
+        tools:layout="@layout/fragment_noticia_info">
+        <argument
+            android:name="CurrentNoticia"
+            app:argType="edu.upc.appcatedraunesco.models.Noticia" />
+    </fragment>
+    <fragment
+        android:id="@+id/productosFragmentInfo"
+        android:name="edu.upc.appcatedraunesco.ProductosFragmentInfo"
+        android:label="ProductosFragmentInfo"
+        tools:layout="@layout/fragment_productos_info">
+        <argument
+            android:name="CurrentProducto"
+            app:argType="edu.upc.appcatedraunesco.models.Producto" />
+    </fragment>
 
     <action
         android:id="@+id/action_to_infoFragment"
@@ -117,5 +135,16 @@
         app:destination="@id/ecoinfFragment"
         app:enterAnim="@anim/fragment_fade_enter"
         app:exitAnim="@anim/fragment_fade_exit" />
+    <action
+        android:id="@+id/action_to_noticiaFragmentInfo"
+        app:destination="@id/noticiaFragmentInfo"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit" />
+    <action
+        android:id="@+id/action_to_productosFragmentInfo"
+        app:destination="@id/productosFragmentInfo"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit" />
+
 
 </navigation>

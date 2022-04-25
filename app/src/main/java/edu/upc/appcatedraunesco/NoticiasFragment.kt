@@ -22,9 +22,7 @@ import edu.upc.appcatedraunesco.models.Noticia
 class NoticiasFragment : Fragment() {
 
     private lateinit var bindingFragmentNoticias: FragmentNoticiasBinding
-
     private lateinit var noticiasAdapter: NoticiasAdapter
-
     private lateinit var user: FirebaseUser
     private lateinit var dbReference: DatabaseReference
     private lateinit var auth: FirebaseAuth
@@ -58,6 +56,7 @@ class NoticiasFragment : Fragment() {
         getDatosNoticia().observeForever { datosList ->
             mutableData.value = datosList
         }
+
         return mutableData
     }
 

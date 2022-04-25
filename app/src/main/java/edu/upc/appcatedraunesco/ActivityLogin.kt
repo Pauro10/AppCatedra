@@ -32,7 +32,6 @@ class ActivityLogin : AppCompatActivity() {
     private lateinit var referencia: DatabaseReference
     private lateinit var database: FirebaseDatabase
     private lateinit var userId: String
-
     private val GOOGLE_SIGN_IN = 100
     private lateinit var googleSignInClient: GoogleSignInClient
 

@@ -22,9 +22,7 @@ import edu.upc.appcatedraunesco.models.Producto
 class ProductosFragment : Fragment() {
 
     private lateinit var bindingFragmentProductos: FragmentProductosBinding
-
     private lateinit var productosAdapter: ProductosAdapter
-
     private lateinit var user: FirebaseUser
     private lateinit var dbReference: DatabaseReference
     private lateinit var auth: FirebaseAuth

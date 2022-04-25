@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import edu.upc.appcatedraunesco.R
@@ -29,8 +31,8 @@ class EcoinfAdapter(private val context: Context) :
         Picasso.get().load(currentItemEcoinf.imagen).into(holder.itemView.findViewById<ImageView>(R.id.ivImagen))
 
         //Funcion para ir a la noticia IMPORTANTE!!!!!
-        /*holder.itemView.findViewById<CardView>(R.id.cardViewNoticias).setOnClickListener {
-            val action = ClientesFragmentDirections.actionToInfoClient(currentItemNoticia)
+        /*holder.itemView.findViewById<CardView>(R.id.cardViewEcoinf).setOnClickListener {
+            val action = EcoinfFragmentDirections.actionToInfoClient(currentItemEcoinf)
             holder.itemView.findNavController().navigate(action)
         }*/
     }
