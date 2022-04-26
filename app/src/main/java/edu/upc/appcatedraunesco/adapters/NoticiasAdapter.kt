@@ -28,8 +28,10 @@ class NoticiasAdapter(private val context: Context) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItemNoticia = dataListNoticia[position]
         holder.itemView.findViewById<TextView>(R.id.tvTitulo).text = currentItemNoticia.titulo
-        holder.itemView.findViewById<TextView>(R.id.tvDescripcion).text = currentItemNoticia.descripcion
-        Picasso.get().load(currentItemNoticia.imagen).into(holder.itemView.findViewById<ImageView>(R.id.ivImagen))
+        holder.itemView.findViewById<TextView>(R.id.tvDescripcion).text =
+            currentItemNoticia.descripcion
+        Picasso.get().load(currentItemNoticia.imagen)
+            .into(holder.itemView.findViewById<ImageView>(R.id.ivImagen))
 
         //Funcion para ir a la noticia IMPORTANTE!!!!!
         holder.itemView.findViewById<CardView>(R.id.cardViewNoticias).setOnClickListener {

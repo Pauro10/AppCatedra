@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/ConstraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            tools:ignore="ScrollViewSize">
 
             <ImageView
                 android:id="@+id/btnAtras"
@@ -64,6 +65,20 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDescripcion"
                 tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tvMasInfo"
+                android:textSize="17dp"
+                android:text="Mas Informacion"
+                android:textColor="@color/black"
+                android:fontFamily="@font/heebo_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imagenNoticia" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

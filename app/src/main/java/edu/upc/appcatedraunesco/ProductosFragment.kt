@@ -32,7 +32,8 @@ class ProductosFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        this.bindingFragmentProductos = DataBindingUtil.inflate(inflater, R.layout.fragment_productos, container, false)
+        this.bindingFragmentProductos =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_productos, container, false)
 
         dbReference = FirebaseDatabase.getInstance().reference.child("Producto")
 
@@ -69,31 +70,31 @@ class ProductosFragment : Fragment() {
     private fun getDatosProducto(): LiveData<MutableList<Producto>> {
         val mutableData = MutableLiveData<MutableList<Producto>>()
         val listData = mutableListOf<Producto>()
-        dbReference.orderByKey().limitToFirst(1)
-            .addListenerForSingleValueEvent(object : ValueEventListener {
-                @RequiresApi(Build.VERSION_CODES.O)
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    snapshot.children.forEach { producto ->
-                        val nombre =producto.child("nombre").value.toString()
-                        val descripcion =producto.child("descripcion").value.toString()
-                        val comercializacion =producto.child("comercializacion").value.toString()
-                        val imagen =producto.child("imagen").value.toString()
+        dbReference.orderByKey().addListenerForSingleValueEvent(object : ValueEventListener {
+            @RequiresApi(Build.VERSION_CODES.O)
+            override fun onDataChange(snapshot: DataSnapshot) {
+                snapshot.children.forEach { producto ->
+                    val nombre = producto.child("nombre").value.toString()
+                    val descripcion = producto.child("descripcion").value.toString()
+                    val comercializacion = producto.child("comercializacion").value.toString()
+                    val imagen = producto.child("imagen").value.toString()
 
-                        val datosNoticia = Producto(
-                            nombre,
-                            descripcion,
-                            imagen
-                        )
+                    val datosNoticia = Producto(
+                        nombre,
+                        descripcion,
+                        comercializacion,
+                        imagen
+                    )
 
-                        listData.add(datosNoticia)
-                        mutableData.value =listData
-                    }
+                    listData.add(datosNoticia)
+                    mutableData.value = listData
                 }
+            }
 
-                override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
-                }
-            })
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
         return mutableData
     }
 

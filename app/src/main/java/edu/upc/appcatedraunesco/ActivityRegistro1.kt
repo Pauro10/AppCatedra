@@ -25,7 +25,7 @@ class ActivityRegistro1 : AppCompatActivity() {
         // Next Signup Screen
         this.bindingRegistro1.btnSiguiente.setOnClickListener {
 
-            if( !comprovarCampos(it) ){
+            if (!comprovarCampos(it)) {
                 return@setOnClickListener
             }
 
@@ -41,35 +41,41 @@ class ActivityRegistro1 : AppCompatActivity() {
         fullScreenMode()
     }
 
-    private fun cambiarPantalla(view: View, option: Int ){
+    private fun cambiarPantalla(view: View, option: Int) {
 
         var intent = Intent()
 
-        when(option){
+        when (option) {
             0 -> {
                 // Atrás
-                intent = Intent( applicationContext, ActivityLogin::class.java )
+                intent = Intent(applicationContext, ActivityLogin::class.java)
             }
             1 -> {
                 // Següent
-                intent = Intent( applicationContext, ActivityRegistro2::class.java ).apply {
+                intent = Intent(applicationContext, ActivityRegistro2::class.java).apply {
                     // Preparamos los datos del usuario
-                    this.putExtra("EXTRA_SESSION_NOMBRECOMPLETO", bindingRegistro1.tfNombre.text.toString() )
-                    this.putExtra("EXTRA_SESSION_DNI", bindingRegistro1.tfDni.text.toString() )
-                    this.putExtra("EXTRA_SESSION_CORREO", bindingRegistro1.tfMail.text.toString() )
-                    this.putExtra("EXTRA_SESSION_PASSWORD", bindingRegistro1.tfContrasena.text.toString() )
+                    this.putExtra(
+                        "EXTRA_SESSION_NOMBRECOMPLETO",
+                        bindingRegistro1.tfNombre.text.toString()
+                    )
+                    this.putExtra("EXTRA_SESSION_DNI", bindingRegistro1.tfDni.text.toString())
+                    this.putExtra("EXTRA_SESSION_CORREO", bindingRegistro1.tfMail.text.toString())
+                    this.putExtra(
+                        "EXTRA_SESSION_PASSWORD",
+                        bindingRegistro1.tfContrasena.text.toString()
+                    )
                 }
             }
             2 -> {
                 // Login
-                intent = Intent( applicationContext, ActivityLogin::class.java )
+                intent = Intent(applicationContext, ActivityLogin::class.java)
             }
         }
 
         startActivity(intent)
-        if( option == 0 ){
+        if (option == 0) {
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
-        }else{
+        } else {
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
         finish()
@@ -78,19 +84,21 @@ class ActivityRegistro1 : AppCompatActivity() {
     private fun comprovarCampos(view: View): Boolean {
 
         // Validate password
-        return if( this.bindingRegistro1.tfContrasena.text.toString() == "" || this.bindingRegistro1.tfContrasena.text.toString().length < 6 ) {
+        return if (this.bindingRegistro1.tfContrasena.text.toString() == "" || this.bindingRegistro1.tfContrasena.text.toString().length < 6) {
             view.snack((getString(R.string.error_pass)))
             false
-        } else if( this.bindingRegistro1.tfMail.text.toString() == "" || !this.bindingRegistro1.tfMail.text.toString().contains(regex = email_Param.toRegex())) {
+        } else if (this.bindingRegistro1.tfMail.text.toString() == "" || !this.bindingRegistro1.tfMail.text.toString()
+                .contains(regex = email_Param.toRegex())
+        ) {
             view.snack((getString(R.string.error_mail)))
             false
-        } else if( this.bindingRegistro1.tfDni.text.toString() == "" ) {
+        } else if (this.bindingRegistro1.tfDni.text.toString() == "") {
             view.snack((getString(R.string.error_dni)))
             false
-        } else if( this.bindingRegistro1.tfNombre.text.toString() == "" ) {
+        } else if (this.bindingRegistro1.tfNombre.text.toString() == "") {
             view.snack((getString(R.string.error_nombre)))
             false
-        } else{
+        } else {
             true
         }
 

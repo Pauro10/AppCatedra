@@ -10,6 +10,7 @@ import androidx.cardview.widget.CardView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import edu.upc.appcatedraunesco.EcoinfFragmentDirections
 import edu.upc.appcatedraunesco.R
 import edu.upc.appcatedraunesco.models.Ecoinf
 
@@ -27,14 +28,16 @@ class EcoinfAdapter(private val context: Context) :
         val currentItemEcoinf = dataListEcoinf[position]
         holder.itemView.findViewById<TextView>(R.id.tvNombre).text = currentItemEcoinf.nombre
         holder.itemView.findViewById<TextView>(R.id.tvDirecion).text = currentItemEcoinf.direccion
-        holder.itemView.findViewById<TextView>(R.id.tvNumTel).text = currentItemEcoinf.numeroTelefono
-        Picasso.get().load(currentItemEcoinf.imagen).into(holder.itemView.findViewById<ImageView>(R.id.ivImagen))
+        holder.itemView.findViewById<TextView>(R.id.tvNumTel).text =
+            currentItemEcoinf.numeroTelefono
+        Picasso.get().load(currentItemEcoinf.imagen)
+            .into(holder.itemView.findViewById<ImageView>(R.id.ivImagen))
 
         //Funcion para ir a la noticia IMPORTANTE!!!!!
-        /*holder.itemView.findViewById<CardView>(R.id.cardViewEcoinf).setOnClickListener {
-            val action = EcoinfFragmentDirections.actionToInfoClient(currentItemEcoinf)
+        holder.itemView.findViewById<CardView>(R.id.cardViewEcoinf).setOnClickListener {
+            val action = EcoinfFragmentDirections.actionToEcoinfFragmentInfo(currentItemEcoinf)
             holder.itemView.findNavController().navigate(action)
-        }*/
+        }
     }
 
     override fun getItemCount(): Int {

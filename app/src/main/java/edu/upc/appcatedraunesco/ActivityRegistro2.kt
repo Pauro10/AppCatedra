@@ -25,10 +25,10 @@ class ActivityRegistro2 : AppCompatActivity() {
         bindingRegistro2 = DataBindingUtil.setContentView(this, R.layout.activity_registro2)
 
         // Informació Usuario
-        this.tNombreCompleto  = intent.getStringExtra("EXTRA_SESSION_NOMBRECOMPLETO").toString()
-        this.tNif  = intent.getStringExtra("EXTRA_SESSION_DNI").toString()
-        this.tEmail     = intent.getStringExtra("EXTRA_SESSION_CORREO").toString()
-        this.tPassword  = intent.getStringExtra("EXTRA_SESSION_PASSWORD").toString()
+        this.tNombreCompleto = intent.getStringExtra("EXTRA_SESSION_NOMBRECOMPLETO").toString()
+        this.tNif = intent.getStringExtra("EXTRA_SESSION_DNI").toString()
+        this.tEmail = intent.getStringExtra("EXTRA_SESSION_CORREO").toString()
+        this.tPassword = intent.getStringExtra("EXTRA_SESSION_PASSWORD").toString()
 
         // LISTENERS
 
@@ -71,10 +71,10 @@ class ActivityRegistro2 : AppCompatActivity() {
         fullScreenMode()
     }
 
-    private fun cambiarPantalla(view: View, option: Int ){
+    private fun cambiarPantalla(view: View, option: Int) {
         var intent = Intent()
 
-        when(option){
+        when (option) {
             0 -> {
                 // Pantalla Back
                 intent = Intent(applicationContext, ActivityLogin::class.java)
@@ -86,20 +86,20 @@ class ActivityRegistro2 : AppCompatActivity() {
             2 -> {
                 // Pantalla registro 3
                 intent = Intent(applicationContext, ActivityRegistro3::class.java).apply {
-                    this.putExtra("EXTRA_SESSION_NOMBRECOMPLETO", tNombreCompleto )
-                    this.putExtra("EXTRA_SESSION_CORREO", tEmail )
-                    this.putExtra("EXTRA_SESSION_PASSWORD", tPassword )
-                    this.putExtra("EXTRA_SESSION_DNI", tNif )
-                    this.putExtra("EXTRA_SESSION_GENDER", tGenero )
-                    this.putExtra("EXTRA_SESSION_FECHANACIMIENTO", tFechaNacimiento )
+                    this.putExtra("EXTRA_SESSION_NOMBRECOMPLETO", tNombreCompleto)
+                    this.putExtra("EXTRA_SESSION_CORREO", tEmail)
+                    this.putExtra("EXTRA_SESSION_PASSWORD", tPassword)
+                    this.putExtra("EXTRA_SESSION_DNI", tNif)
+                    this.putExtra("EXTRA_SESSION_GENDER", tGenero)
+                    this.putExtra("EXTRA_SESSION_FECHANACIMIENTO", tFechaNacimiento)
                 }
             }
         }
 
         startActivity(intent)
-        if(option == 0){
+        if (option == 0) {
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
-        }else{
+        } else {
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
         finish()

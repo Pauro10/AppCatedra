@@ -8,4 +8,5 @@ class Producto @RequiresApi(Build.VERSION_CODES.O) constructor(
     var nombre: String,
     var descripcion: String,
     var imagen: String,
+    var comercializacion: String,
 ) : Serializable

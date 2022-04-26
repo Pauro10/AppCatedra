@@ -18,7 +18,8 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        this.bindingFragmetnHome = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
+        this.bindingFragmetnHome =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
         return this.bindingFragmetnHome.root
     }
 

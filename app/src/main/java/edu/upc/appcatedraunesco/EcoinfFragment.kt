@@ -35,7 +35,8 @@ class EcoinfFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        this.bindingFragmentEcoinf = DataBindingUtil.inflate(inflater, R.layout.fragment_ecoinf, container, false)
+        this.bindingFragmentEcoinf =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_ecoinf, container, false)
 
         dbReference = FirebaseDatabase.getInstance().reference.child("Ecoinfraestructura")
 
@@ -76,46 +77,47 @@ class EcoinfFragment : Fragment() {
     private fun getDatosEcoinf(): LiveData<MutableList<Ecoinf>> {
         val mutableData = MutableLiveData<MutableList<Ecoinf>>()
         val listData = mutableListOf<Ecoinf>()
-        dbReference.orderByKey().limitToFirst(1)
-            .addListenerForSingleValueEvent(object : ValueEventListener {
-                @RequiresApi(Build.VERSION_CODES.O)
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    snapshot.children.forEach { ecoinf ->
-                        val nombre =ecoinf.child("nombre").value.toString()
-                        val numeroTelefono =ecoinf.child("numeroTelefono").value.toString()
-                        val imagen =ecoinf.child("imagen").value.toString()
-                        val latitud =ecoinf.child("latitud").value.toString()
-                        val longitud =ecoinf.child("longitud").value.toString()
-                        val direccion =ecoinf.child("direccion").value.toString()
+        dbReference.orderByKey().addListenerForSingleValueEvent(object : ValueEventListener {
+            @RequiresApi(Build.VERSION_CODES.O)
+            override fun onDataChange(snapshot: DataSnapshot) {
+                snapshot.children.forEach { ecoinf ->
+                    val nombre = ecoinf.child("nombre").value.toString()
+                    val numeroTelefono = ecoinf.child("numeroTelefono").value.toString()
+                    val imagen = ecoinf.child("imagen").value.toString()
+                    val latitud = ecoinf.child("latitud").value.toString()
+                    val longitud = ecoinf.child("longitud").value.toString()
+                    val direccion = ecoinf.child("direccion").value.toString()
+                    val urlPagina = ecoinf.child("urlPagina").value.toString()
 
-                        val datosEcoinf = Ecoinf(
-                            nombre,
-                            numeroTelefono,
-                            imagen,
-                            latitud,
-                            longitud,
-                            direccion
-                        )
+                    val datosEcoinf = Ecoinf(
+                        nombre,
+                        numeroTelefono,
+                        imagen,
+                        latitud,
+                        longitud,
+                        direccion,
+                        urlPagina
+                    )
 
-                        listData.add(datosEcoinf)
-                        mutableData.value =listData
-                    }
+                    listData.add(datosEcoinf)
+                    mutableData.value = listData
                 }
+            }
 
-                override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
-                }
-            })
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
         return mutableData
     }
 
-    private fun changeBottomMenuIcon( option: Int ){
+    private fun changeBottomMenuIcon(option: Int) {
 
         this.bindingFragmentEcoinf.btnMapa.setImageResource(R.drawable.ic_map2_light)
         this.bindingFragmentEcoinf.btnLista.setImageResource(R.drawable.ic_list_bright)
 
 
-        when(option){
+        when (option) {
             0 -> this.bindingFragmentEcoinf.btnMapa.setImageResource(R.drawable.ic_map2_dark)
             1 -> this.bindingFragmentEcoinf.btnLista.setImageResource(R.drawable.ic_list_dark)
         }

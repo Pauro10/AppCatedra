@@ -21,7 +21,8 @@ class ProductosFragmentInfo : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        this.bindingFragmentProductosInfo = DataBindingUtil.inflate(inflater, R.layout.fragment_productos_info, container, false)
+        this.bindingFragmentProductosInfo =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_productos_info, container, false)
 
         this.bindingFragmentProductosInfo.btnAtras.setOnClickListener {
             getFragmentManager()?.popBackStack()
@@ -29,7 +30,8 @@ class ProductosFragmentInfo : Fragment() {
 
         bindingFragmentProductosInfo.tvNombre.setText(args.currentProducto.nombre)
         bindingFragmentProductosInfo.tvDescripcion.setText(args.currentProducto.descripcion)
-        Picasso.get().load(args.currentProducto.imagen).into(bindingFragmentProductosInfo.imagenProducto)
+        Picasso.get().load(args.currentProducto.imagen)
+            .into(bindingFragmentProductosInfo.imagenProducto)
 
         return this.bindingFragmentProductosInfo.root
     }

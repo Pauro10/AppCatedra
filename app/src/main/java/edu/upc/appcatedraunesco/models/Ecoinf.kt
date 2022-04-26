@@ -11,4 +11,5 @@ class Ecoinf @RequiresApi(Build.VERSION_CODES.O) constructor(
     var latitud: String,
     var longitud: String,
     var direccion: String,
+    var urlPagina: String,
 ) : Serializable

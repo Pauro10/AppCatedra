@@ -18,7 +18,8 @@ class AdminFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        this.bindingFragmentAdmin = DataBindingUtil.inflate(inflater, R.layout.fragment_admin, container, false)
+        this.bindingFragmentAdmin =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_admin, container, false)
 
         bindingFragmentAdmin.btEcoinf.setOnClickListener {
             findNavController().navigate(R.id.action_to_addEcoinfFragment)

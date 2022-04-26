@@ -79,6 +79,15 @@
             android:name="CurrentProducto"
             app:argType="edu.upc.appcatedraunesco.models.Producto" />
     </fragment>
+    <fragment
+        android:id="@+id/ecoinfFragmentInfo"
+        android:name="edu.upc.appcatedraunesco.EcoinfFragmentInfo"
+        android:label="EcoinfFragmentInfo"
+        tools:layout="@layout/fragment_ecoinf_info">
+        <argument
+            android:name="CurrentEcoinf"
+            app:argType="edu.upc.appcatedraunesco.models.Ecoinf" />
+    </fragment>
 
     <action
         android:id="@+id/action_to_infoFragment"
@@ -143,6 +152,11 @@
     <action
         android:id="@+id/action_to_productosFragmentInfo"
         app:destination="@id/productosFragmentInfo"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit" />
+    <action
+        android:id="@+id/action_to_ecoinfFragmentInfo"
+        app:destination="@id/ecoinfFragmentInfo"
         app:enterAnim="@anim/fragment_fade_enter"
         app:exitAnim="@anim/fragment_fade_exit" />
 

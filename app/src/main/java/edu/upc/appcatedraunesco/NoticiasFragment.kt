@@ -70,30 +70,31 @@ class NoticiasFragment : Fragment() {
     private fun getDatosNoticia(): LiveData<MutableList<Noticia>> {
         val mutableData = MutableLiveData<MutableList<Noticia>>()
         val listData = mutableListOf<Noticia>()
-        dbReference.orderByKey().limitToFirst(1)
-            .addListenerForSingleValueEvent(object : ValueEventListener {
-                @RequiresApi(Build.VERSION_CODES.O)
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    snapshot.children.forEach { noticia ->
-                        val titulo =noticia.child("titulo").value.toString()
-                        val descripcion =noticia.child("descripcion").value.toString()
-                        val imagen =noticia.child("imagen").value.toString()
+        dbReference.orderByKey().addListenerForSingleValueEvent(object : ValueEventListener {
+            @RequiresApi(Build.VERSION_CODES.O)
+            override fun onDataChange(snapshot: DataSnapshot) {
+                snapshot.children.forEach { noticia ->
+                    val titulo = noticia.child("titulo").value.toString()
+                    val descripcion = noticia.child("descripcion").value.toString()
+                    val imagen = noticia.child("imagen").value.toString()
+                    val urlPagina = noticia.child("urlPagina").value.toString()
 
-                        val datosNoticia = Noticia(
-                            titulo,
-                            descripcion,
-                            imagen
-                        )
+                    val datosNoticia = Noticia(
+                        titulo,
+                        descripcion,
+                        imagen,
+                        urlPagina
+                    )
 
-                        listData.add(datosNoticia)
-                        mutableData.value =listData
-                    }
+                    listData.add(datosNoticia)
+                    mutableData.value = listData
                 }
+            }
 
-                override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
-                }
-            })
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
         return mutableData
     }
 }

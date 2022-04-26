@@ -18,7 +18,8 @@ class InfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        this.bindingFragmentInfo = DataBindingUtil.inflate(inflater, R.layout.fragment_info, container, false)
+        this.bindingFragmentInfo =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_info, container, false)
         return this.bindingFragmentInfo.root
     }
 }

@@ -28,12 +28,15 @@ class ProductosAdapter(private val context: Context) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItemProducto = dataListProducto[position]
         holder.itemView.findViewById<TextView>(R.id.tvTitulo).text = currentItemProducto.nombre
-        holder.itemView.findViewById<TextView>(R.id.tvDescripcion).text = currentItemProducto.descripcion
-        Picasso.get().load(currentItemProducto.imagen).into(holder.itemView.findViewById<ImageView>(R.id.ivImagen))
+        holder.itemView.findViewById<TextView>(R.id.tvDescripcion).text =
+            currentItemProducto.descripcion
+        Picasso.get().load(currentItemProducto.imagen)
+            .into(holder.itemView.findViewById<ImageView>(R.id.ivImagen))
 
         //Funcion para ir a la noticia IMPORTANTE!!!!!
         holder.itemView.findViewById<CardView>(R.id.cardViewProductos).setOnClickListener {
-            val action = ProductosFragmentDirections.actionToProductosFragmentInfo(currentItemProducto)
+            val action =
+                ProductosFragmentDirections.actionToProductosFragmentInfo(currentItemProducto)
             holder.itemView.findNavController().navigate(action)
         }
     }

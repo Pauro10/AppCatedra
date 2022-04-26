@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewNoticias"
@@ -33,8 +33,7 @@
                 android:src="@drawable/ic_notes_dark"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvTitulo"
@@ -44,7 +43,7 @@
                 android:fontFamily="@font/heebo_medium"
                 android:text="Titulo"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/ivImagen"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -59,11 +58,10 @@
                 android:lines="5"
                 android:maxLines="5"
                 android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                android:textColor="@color/black"
-                android:textSize="12dp"
+                android:textColor="@color/grey"
+                android:textSize="12sp"
                 app:layout_constraintStart_toEndOf="@+id/ivImagen"
                 app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

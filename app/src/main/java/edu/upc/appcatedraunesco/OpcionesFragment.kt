@@ -23,9 +23,10 @@ class OpcionesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        this.bindingFragmentOpciones = DataBindingUtil.inflate(inflater, R.layout.fragment_opciones, container, false)
+        this.bindingFragmentOpciones =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_opciones, container, false)
 
-        if (FirebaseAuth.getInstance().currentUser == null){
+        if (FirebaseAuth.getInstance().currentUser == null) {
             bindingFragmentOpciones.txtLogIn.setVisibility(VISIBLE)
             bindingFragmentOpciones.txtLogOut.setVisibility(GONE)
         } else {

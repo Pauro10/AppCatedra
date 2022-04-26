@@ -23,8 +23,8 @@ class ActivitySplashScreen : AppCompatActivity() {
     private lateinit var poweredByLine: TextView
 
     // Animations
-    private lateinit var sideAnim : Animation
-    private lateinit var bottomAnim : Animation
+    private lateinit var sideAnim: Animation
+    private lateinit var bottomAnim: Animation
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,11 +55,12 @@ class ActivitySplashScreen : AppCompatActivity() {
         }, SPLASH_TIMER)
     }
 
-    private fun  fullScreenMode(){
+    private fun fullScreenMode() {
         // Hide actionBar and fullScreen mode
         supportActionBar?.hide()
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN)
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
     }
 }

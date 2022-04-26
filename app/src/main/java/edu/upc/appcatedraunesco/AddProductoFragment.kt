@@ -64,20 +64,27 @@ class AddProductoFragment : Fragment() {
             pickImage()
         }
 
+        this.bindingFragmentAddProducto.btnAtras.setOnClickListener {
+            getFragmentManager()?.popBackStack()
+        }
+
         return this.bindingFragmentAddProducto.root
     }
 
-    private fun crearProducto(view: View){
+    private fun crearProducto(view: View) {
 
         val nombre = this.bindingFragmentAddProducto.tfNombre.text.toString().trim()
         val descripcion = this.bindingFragmentAddProducto.tfDescripcion.text.toString().trim()
+        val comercializacion = this.bindingFragmentAddProducto.tfComerc.text.toString().trim()
 
-        if( glbUrl === "" ){
-            glbUrl = "https://firebasestorage.googleapis.com/v0/b/appcatedraunesco.appspot.com/o/Noticias%2Faaaaaa.png?alt=media&token=ed648828-3f7c-4063-aaa1-19941152c20a"
+        if (glbUrl === "") {
+            glbUrl =
+                "https://firebasestorage.googleapis.com/v0/b/appcatedraunesco.appspot.com/o/Noticias%2Faaaaaa.png?alt=media&token=ed648828-3f7c-4063-aaa1-19941152c20a"
         }
         val producto = Producto(
             nombre = nombre,
             descripcion = descripcion,
+            comercializacion = comercializacion,
             imagen = this.glbUrl
         )
         val id = this.reference.push().key
@@ -88,7 +95,7 @@ class AddProductoFragment : Fragment() {
         view.snack("se ha publicado con exito!")
     }
 
-    private fun pickImage(){
+    private fun pickImage() {
         val intent = Intent()
         intent.type = "image/*"
         intent.action = Intent.ACTION_GET_CONTENT
@@ -99,7 +106,7 @@ class AddProductoFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
 
         // Change Image Peview to Choosed Image
-        if (requestCode == GALLERY_PICKUP_CODE && resultCode == Activity.RESULT_OK && data!!.data != null){
+        if (requestCode == GALLERY_PICKUP_CODE && resultCode == Activity.RESULT_OK && data!!.data != null) {
             imageUri = data.data
             uploadedImageToDatabase()
         }
@@ -111,21 +118,21 @@ class AddProductoFragment : Fragment() {
         progressBar.setMessage("La imagen se esta subiendo espera")
         progressBar.show()
 
-        if(imageUri!=null){
+        if (imageUri != null) {
             var fileRef = storageRef!!.child(System.currentTimeMillis().toString() + ".jpg")
 
             var uploadTask: StorageTask<*>
             uploadTask = fileRef.putFile(imageUri!!)
 
-            uploadTask.continueWithTask(Continuation <UploadTask.TaskSnapshot, Task<Uri>> { task ->
-                if(!task.isSuccessful){
+            uploadTask.continueWithTask(Continuation<UploadTask.TaskSnapshot, Task<Uri>> { task ->
+                if (!task.isSuccessful) {
                     task.exception?.let {
                         throw it
                     }
                 }
                 return@Continuation fileRef.downloadUrl
-            }).addOnCompleteListener{ task ->
-                if (task.isSuccessful){
+            }).addOnCompleteListener { task ->
+                if (task.isSuccessful) {
                     imageUri = task.result
                     glbUrl = imageUri.toString()
 

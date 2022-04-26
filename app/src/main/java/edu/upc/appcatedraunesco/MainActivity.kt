@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         fullScreenMode()
 
-        if (FirebaseAuth.getInstance().currentUser == null){
+        if (FirebaseAuth.getInstance().currentUser == null) {
             bindingMainActivity.btnInfo.setVisibility(View.VISIBLE)
             bindingMainActivity.btnAdmin.setVisibility(View.GONE)
         } else {
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun changeBottomMenuIcon( option: Int ){
+    private fun changeBottomMenuIcon(option: Int) {
 
         this.bindingMainActivity.btnSettings.setImageResource(R.drawable.ic_settings_bright)
         this.bindingMainActivity.btnInfo.setImageResource(R.drawable.ic_info_bright)
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
         this.bindingMainActivity.btnAdmin.setImageResource(R.drawable.ic_admin_panel_settings_bright)
 
 
-        when(option){
+        when (option) {
             5 -> this.bindingMainActivity.btnAdmin.setImageResource(R.drawable.ic_admin_panel_settings_dark)
             4 -> this.bindingMainActivity.btnSettings.setImageResource(R.drawable.ic_settings)
             1 -> this.bindingMainActivity.btnInfo.setImageResource(R.drawable.ic_info_dark)
@@ -98,12 +98,13 @@ class MainActivity : AppCompatActivity() {
         findNavController(R.id.fragmentContainer).navigate(action)
     }*/
 
-    private fun  fullScreenMode(){
+    private fun fullScreenMode() {
         // Hide actionBar and fullScreen mode
         supportActionBar?.hide()
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN)
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
     }
 
 

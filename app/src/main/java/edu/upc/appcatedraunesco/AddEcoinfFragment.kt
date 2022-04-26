@@ -56,11 +56,14 @@ class AddEcoinfFragment : Fragment() {
 
         bindingFragmentAddEcoinf.ivAnadir.setOnClickListener {
             crearEcoinf(it)
-            findNavController().navigate(R.id.action_to_mapsFragment)
         }
 
         bindingFragmentAddEcoinf.btnImagen.setOnClickListener {
             pickImage()
+        }
+
+        this.bindingFragmentAddEcoinf.btnAtras.setOnClickListener {
+            getFragmentManager()?.popBackStack()
         }
 
         return this.bindingFragmentAddEcoinf.root
@@ -73,25 +76,48 @@ class AddEcoinfFragment : Fragment() {
         val latitud = this.bindingFragmentAddEcoinf.tfLatitud.text.toString().trim()
         val longitud = this.bindingFragmentAddEcoinf.tfLongitud.text.toString().trim()
         val direccion = this.bindingFragmentAddEcoinf.tfDireccion.text.toString().trim()
+        val urlPagina = this.bindingFragmentAddEcoinf.tfUrl.text.toString().trim()
 
-        val ecoinf = Ecoinf(
-            nombre = nombre,
-            numeroTelefono = numTelefono,
-            latitud = latitud,
-            longitud = longitud,
-            direccion = direccion,
-            imagen = glbUrl
-        )
-        val id = this.reference.push().key
+        if (glbUrl === "") {
+            glbUrl =
+                "https://firebasestorage.googleapis.com/v0/b/appcatedraunesco.appspot.com/o/Noticias%2Faaaaaa.png?alt=media&token=ed648828-3f7c-4063-aaa1-19941152c20a"
+        }
+        if (nombre != "") {
+            if (numTelefono != "") {
+                if (latitud != "" || longitud != "") {
+                    if (direccion != "") {
+                        val ecoinf = Ecoinf(
+                            nombre = nombre,
+                            numeroTelefono = numTelefono,
+                            latitud = latitud,
+                            longitud = longitud,
+                            direccion = direccion,
+                            urlPagina = urlPagina,
+                            imagen = glbUrl
+                        )
+                        val id = this.reference.push().key
 
-        this.reference.child(id!!).setValue(ecoinf)
+                        this.reference.child(id!!).setValue(ecoinf)
 
-        // Retroalimentació
-        view.snack("se ha publicado con exito!")
+                        // Retroalimentació
+                        view.snack("se ha publicado con exito!")
+                        findNavController().navigate(R.id.action_to_mapsFragment)
+                    } else {
+                        view.snack("Debes introducir la direccion de la ecoinfraestructura")
+                    }
+                } else {
+                    view.snack("Debes introducir las cordenadas de la ecoinfraestructura")
+                }
+            } else {
+                view.snack("Debes introducir el numero de telefono")
+            }
+        } else {
+            view.snack("Debes introducir el nombre de la ecoinfraestructura")
+        }
 
     }
 
-    private fun pickImage(){
+    private fun pickImage() {
         val intent = Intent()
         intent.type = "image/*"
         intent.action = Intent.ACTION_GET_CONTENT
@@ -102,7 +128,7 @@ class AddEcoinfFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
 
         // Change Image Peview to Choosed Image
-        if (requestCode == GALLERY_PICKUP_CODE && resultCode == Activity.RESULT_OK && data!!.data != null){
+        if (requestCode == GALLERY_PICKUP_CODE && resultCode == Activity.RESULT_OK && data!!.data != null) {
             imageUri = data.data
             uploadedImageToDatabase()
         }
@@ -114,21 +140,21 @@ class AddEcoinfFragment : Fragment() {
         progressBar.setMessage("La imagen se esta subiendo espera")
         progressBar.show()
 
-        if(imageUri!=null){
+        if (imageUri != null) {
             var fileRef = storageRef!!.child(System.currentTimeMillis().toString() + ".jpg")
 
             var uploadTask: StorageTask<*>
             uploadTask = fileRef.putFile(imageUri!!)
 
-            uploadTask.continueWithTask(Continuation <UploadTask.TaskSnapshot, Task<Uri>> { task ->
-                if(!task.isSuccessful){
+            uploadTask.continueWithTask(Continuation<UploadTask.TaskSnapshot, Task<Uri>> { task ->
+                if (!task.isSuccessful) {
                     task.exception?.let {
                         throw it
                     }
                 }
                 return@Continuation fileRef.downloadUrl
-            }).addOnCompleteListener{ task ->
-                if (task.isSuccessful){
+            }).addOnCompleteListener { task ->
+                if (task.isSuccessful) {
                     imageUri = task.result
                     glbUrl = imageUri.toString()
 
