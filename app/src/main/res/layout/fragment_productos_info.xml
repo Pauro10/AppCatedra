@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ConstraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="ScrollViewSize">
 
         <ImageView
             android:id="@+id/btnAtras"
@@ -64,6 +65,30 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvDescripcion"
             tools:src="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/btEditar"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/black"
+            android:text="@string/bEditar"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imagenProducto" />
+
+        <Button
+            android:id="@+id/btEliminar"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:backgroundTint="@color/red"
+            android:text="@string/bEliminar"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imagenProducto" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

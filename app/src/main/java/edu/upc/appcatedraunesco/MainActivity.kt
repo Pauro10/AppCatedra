@@ -21,11 +21,11 @@ class MainActivity : AppCompatActivity() {
         fullScreenMode()
 
         if (FirebaseAuth.getInstance().currentUser == null) {
-            bindingMainActivity.btnInfo.setVisibility(View.VISIBLE)
-            bindingMainActivity.btnAdmin.setVisibility(View.GONE)
+            bindingMainActivity.btnInfo.visibility = View.VISIBLE
+            bindingMainActivity.btnAdmin.visibility = View.GONE
         } else {
-            bindingMainActivity.btnInfo.setVisibility(View.GONE)
-            bindingMainActivity.btnAdmin.setVisibility(View.VISIBLE)
+            bindingMainActivity.btnInfo.visibility = View.GONE
+            bindingMainActivity.btnAdmin.visibility = View.VISIBLE
         }
 
         // Paint Maps Icon ( Default onStart )

@@ -131,6 +131,30 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <Button
+            android:id="@+id/btEditar"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/black"
+            android:text="@string/bEditar"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+
+        <Button
+            android:id="@+id/btEliminar"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:backgroundTint="@color/red"
+            android:text="@string/bEliminar"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

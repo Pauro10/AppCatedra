@@ -92,7 +92,7 @@ class AddProductoFragment : Fragment() {
         this.reference.child(id!!).setValue(producto)
 
         // Retroalimentació
-        view.snack("se ha publicado con exito!")
+        view.snack(getString(R.string.publexit))
     }
 
     private fun pickImage() {
@@ -115,7 +115,7 @@ class AddProductoFragment : Fragment() {
 
     private fun uploadedImageToDatabase() {
         val progressBar = ProgressDialog(context)
-        progressBar.setMessage("La imagen se esta subiendo espera")
+        progressBar.setMessage(getString(R.string.cargaimg))
         progressBar.show()
 
         if (imageUri != null) {

@@ -100,19 +100,19 @@ class AddEcoinfFragment : Fragment() {
                         this.reference.child(id!!).setValue(ecoinf)
 
                         // Retroalimentació
-                        view.snack("se ha publicado con exito!")
+                        view.snack(getString(R.string.publexit))
                         findNavController().navigate(R.id.action_to_mapsFragment)
                     } else {
-                        view.snack("Debes introducir la direccion de la ecoinfraestructura")
+                        view.snack(getString(R.string.dirececoinf))
                     }
                 } else {
-                    view.snack("Debes introducir las cordenadas de la ecoinfraestructura")
+                    view.snack(getString(R.string.introcoor))
                 }
             } else {
-                view.snack("Debes introducir el numero de telefono")
+                view.snack(getString(R.string.intronumt))
             }
         } else {
-            view.snack("Debes introducir el nombre de la ecoinfraestructura")
+            view.snack(getString(R.string.intromnomeco))
         }
 
     }
@@ -137,7 +137,7 @@ class AddEcoinfFragment : Fragment() {
 
     private fun uploadedImageToDatabase() {
         val progressBar = ProgressDialog(context)
-        progressBar.setMessage("La imagen se esta subiendo espera")
+        progressBar.setMessage(getString(R.string.cargaimg))
         progressBar.show()
 
         if (imageUri != null) {

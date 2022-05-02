@@ -95,16 +95,16 @@ class AddNoticiaFragment : Fragment() {
                     this.reference.child(id!!).setValue(noticia)
 
                     // Retroalimentació
-                    view.snack("se ha publicado con exito!")
+                    view.snack(getString(R.string.publexit))
                     findNavController().navigate(R.id.action_to_noticiasFragment)
                 } else {
-                    view.snack("Introduce la url de la noticia")
+                    view.snack(getString(R.string.introurln))
                 }
             } else {
-                view.snack("La noticia necesita una descripcion")
+                view.snack(getString(R.string.introdesc))
             }
         } else {
-            view.snack("Debes introducir el tituloa la noticia")
+            view.snack(getString(R.string.introtitulon))
         }
 
     }
@@ -129,7 +129,7 @@ class AddNoticiaFragment : Fragment() {
 
     private fun uploadedImageToDatabase() {
         val progressBar = ProgressDialog(context)
-        progressBar.setMessage("La imagen se esta subiendo espera")
+        progressBar.setMessage(getString(R.string.cargaimg))
         progressBar.show()
 
         if (imageUri != null) {
