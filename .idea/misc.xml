@@ -20,7 +20,9 @@
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/drawable/ic_admin_panel_settings_dark.xml" value="0.1615" />
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/drawable/ic_back_icon.xml" value="0.181" />
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/drawable/ic_baseline_home_black.xml" value="0.181" />
+        <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/drawable/ic_baseline_lock.xml" value="0.1615" />
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/drawable/ic_baseline_login.xml" value="0.181" />
+        <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/drawable/ic_baseline_wifi_protected_setup_24.xml" value="0.1615" />
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/drawable/ic_direccion_black.xml" value="0.1615" />
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/drawable/ic_dni_registro.xml" value="0.181" />
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/drawable/ic_home_bright.xml" value="0.181" />
@@ -67,6 +69,7 @@
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/layout/fragment_info.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/layout/fragment_informar_problema.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/layout/fragment_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/layout/fragment_maps.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/layout/fragment_noticia_info.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/layout/fragment_noticias.xml" value="0.25416666666666665" />
@@ -75,6 +78,7 @@
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/layout/fragment_productos.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/layout/fragment_productos_info.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/layout/fragment_recuperar_password.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/layout/fragment_registro.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1615" />
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1615" />
         <entry key="..\:/Users/pauro/AndroidStudioProjects/AppCatedraUnesco/app/src/main/res/xml/root_preferences.xml" value="0.25416666666666665" />

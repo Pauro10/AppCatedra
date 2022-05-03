@@ -29,7 +29,7 @@
     <string name="txt_identificar">Iniciar sesión</string>
     <string name="txt_add_ecoinf">Añadir Ecoinfreastructura</string>
     <string name="txt_add_producto">Añadir Producto</string>
-    <string name="txt_usuarios">Gestionar Usuarios</string>
+    <string name="txt_usuarios">Crear Usuarios</string>
     <string name="txt_crear_noticia">Crear Noticia</string>
     <string name="add_ecoinf1">Creador de Ecoinfraestructuras</string>
     <string name="add_ecoinf2">Nombre Ecoinfraestructura</string>
@@ -74,4 +74,11 @@
     <string name="ecoinfelim">Ecoinfraestructura eliminada correctamente</string>
     <string name="noticiaelim">Noticia eliminada correctamente</string>
     <string name="appprueba">App en pruebas</string>
+    <string name="txtCreaun">CREA UNA</string>
+    <string name="txtCuenta">CUENTA</string>
+    <string name="txtEmail">Correo electrónico</string>
+    <string name="txtPass">Contraseña</string>
+    <string name="txtConPass">Confirmar contraseña</string>
+    <string name="txtCrearCom">Crear Cuenta</string>
+    <string name="txtConsulta">Consulta enviada correctamente!</string>
 </resources>

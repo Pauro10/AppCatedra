@@ -29,7 +29,7 @@
     <string name="txt_identificar">Log in</string>
     <string name="txt_add_ecoinf">Add Ecoinfreastructure</string>
     <string name="txt_add_producto">Add Product</string>
-    <string name="txt_usuarios">Manage Users</string>
+    <string name="txt_usuarios">Create Users</string>
     <string name="txt_crear_noticia">Create News</string>
     <string name="add_ecoinf1">Creator of Eco-infrastructures</string>
     <string name="add_ecoinf2">Ecoinfrastructure Name</string>
@@ -74,4 +74,11 @@
     <string name="ecoinfelim">Eco-infrastructure successfully removed</string>
     <string name="noticiaelim">News removed successfully</string>
     <string name="appprueba">App in tests</string>
+    <string name="txtCreaun">CREATE AN</string>
+    <string name="txtCuenta">ACCOUNT</string>
+    <string name="txtEmail">Email</string>
+    <string name="txtPass">Password</string>
+    <string name="txtConPass">Confirm password</string>
+    <string name="txtCrearCom">Create Account</string>
+    <string name="txtConsulta">Query sent successfully!</string>
 </resources>

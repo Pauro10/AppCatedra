@@ -33,9 +33,9 @@ class AdminFragment : Fragment() {
             findNavController().navigate(R.id.action_to_addProducteFragment)
         }
 
-        /*bindingFragmentAdmin.btUsuarios.setOnClickListener {
-            findNavController().navigate(R.id.action_to_informarProblemaFragment)
-        }*/
+        bindingFragmentAdmin.btUsuarios.setOnClickListener {
+            findNavController().navigate(R.id.action_to_registroFragment)
+        }
 
         return this.bindingFragmentAdmin.root
     }

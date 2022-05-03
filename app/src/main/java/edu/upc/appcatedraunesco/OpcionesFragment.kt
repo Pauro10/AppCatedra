@@ -42,6 +42,7 @@ class OpcionesFragment : Fragment() {
         bindingFragmentOpciones.txtLogIn.setOnClickListener {
             val intent = Intent(requireContext(), ActivityLogin::class.java)
             startActivity(intent)
+            //findNavController().navigate(R.id.action_to_loginFragment)
         }
 
         bindingFragmentOpciones.txtLogOut.setOnClickListener {

@@ -9,6 +9,8 @@ import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -67,8 +69,8 @@ class ActivityLogin : AppCompatActivity() {
         }*/
 
         bindingLogin.claveOlvidada.setOnClickListener {
-            /*val dialog = RecuperarPasswordFragment()
-            dialog.show(supportFragmentManager, "recuperarPassword")*/
+            val dialog = RecuperarPasswordFragment()
+            dialog.show(supportFragmentManager, "recuperarPassword")
         }
 
         // Recordar cuenta

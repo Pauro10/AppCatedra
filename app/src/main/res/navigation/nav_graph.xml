@@ -36,6 +36,11 @@
         android:name="edu.upc.appcatedraunesco.InformarProblemaFragment"
         android:label="InformarProblemaFragment"
         tools:layout="@layout/fragment_informar_problema"/>
+    <dialog
+        android:id="@+id/recuperarPasswordFragment"
+        android:name="edu.upc.appcatedraunesco.RecuperarPasswordFragment"
+        android:label="RecuperarPasswordFragment"
+        tools:layout="@layout/fragment_recuperar_password"/>
     <fragment
         android:id="@+id/adminFragment"
         android:name="edu.upc.appcatedraunesco.AdminFragment"
@@ -92,6 +97,16 @@
             android:name="CurrentEcoinf"
             app:argType="edu.upc.appcatedraunesco.models.Ecoinf" />
     </fragment>
+    <fragment
+        android:id="@+id/registroFragment"
+        android:name="edu.upc.appcatedraunesco.RegistroFragment"
+        android:label="RegistroFragment"
+        tools:layout="@layout/fragment_registro"/>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="edu.upc.appcatedraunesco.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login"/>
 
     <action
         android:id="@+id/action_to_infoFragment"
@@ -161,6 +176,21 @@
     <action
         android:id="@+id/action_to_ecoinfFragmentInfo"
         app:destination="@id/ecoinfFragmentInfo"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit" />
+    <action
+        android:id="@+id/action_to_registroFragment"
+        app:destination="@id/registroFragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit" />
+    <action
+        android:id="@+id/action_to_recuperarPasswordFragment"
+        app:destination="@id/recuperarPasswordFragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:exitAnim="@anim/fragment_fade_exit" />
+    <action
+        android:id="@+id/action_to_loginFragment"
+        app:destination="@id/loginFragment"
         app:enterAnim="@anim/fragment_fade_enter"
         app:exitAnim="@anim/fragment_fade_exit" />
 
