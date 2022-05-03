@@ -32,8 +32,6 @@ class ActivitySplashScreen : AppCompatActivity() {
         fullScreenMode()
         setContentView(R.layout.activity_splash_screen)
 
-        loadLocate()
-
 
         // Hooks
         backgroundImage = findViewById(R.id.background_image)
@@ -64,26 +62,5 @@ class ActivitySplashScreen : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
-    }
-
-    private fun setLocale(language: String){
-        val locale = Locale(language)
-        Locale.setDefault(locale)
-
-        val config = Configuration()
-        config.locale = locale
-        this.baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics )
-
-        val editor = this.getSharedPreferences("Settings", Activity.MODE_PRIVATE ).edit()
-        editor.putString("My_Lang", language)
-        editor.apply()
-    }
-
-    private fun loadLocate() {
-        val sharedPreferences = this.getSharedPreferences("Settings", Activity.MODE_PRIVATE)
-        val language = sharedPreferences.getString("My_Lang", "")
-        if (language != null) {
-            setLocale(language)
-        }
     }
 }

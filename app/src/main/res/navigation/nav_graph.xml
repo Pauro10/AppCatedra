@@ -50,7 +50,11 @@
         android:id="@+id/addNoticiaFragment"
         android:name="edu.upc.appcatedraunesco.AddNoticiaFragment"
         android:label="AddNoticiaFragment"
-        tools:layout="@layout/fragment_add_noticia"/>
+        tools:layout="@layout/fragment_add_noticia">
+        <argument
+            android:name="CurrentNoticia2"
+            app:argType="edu.upc.appcatedraunesco.models.Noticia" />
+    </fragment>
     <fragment
         android:id="@+id/addProducteFragment"
         android:name="edu.upc.appcatedraunesco.AddProductoFragment"

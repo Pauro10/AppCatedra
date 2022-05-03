@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
 import edu.upc.appcatedraunesco.databinding.FragmentNoticiaInfoBinding
@@ -32,6 +33,14 @@ class NoticiaFragmentInfo : Fragment() {
 
         this.bindingFragmentNoticiaInfo.btnAtras.setOnClickListener {
             getFragmentManager()?.popBackStack()
+        }
+
+        if (FirebaseAuth.getInstance().currentUser == null) {
+            bindingFragmentNoticiaInfo.btEditar.visibility = View.GONE
+            bindingFragmentNoticiaInfo.btEliminar.visibility = View.GONE
+        } else {
+            //bindingFragmentNoticiaInfo.btEditar.visibility = View.VISIBLE
+            bindingFragmentNoticiaInfo.btEliminar.visibility = View.VISIBLE
         }
 
         dbReference = FirebaseDatabase.getInstance().reference;
@@ -67,6 +76,10 @@ class NoticiaFragmentInfo : Fragment() {
             })
             view?.snack(getString(R.string.noticiaelim))
             findNavController().navigate(R.id.action_to_mapsFragment)
+        }
+
+        bindingFragmentNoticiaInfo.btEditar.setOnClickListener {
+
         }
 
         return this.bindingFragmentNoticiaInfo.root

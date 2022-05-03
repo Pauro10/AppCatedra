@@ -58,7 +58,7 @@ class EcoinfFragmentInfo : Fragment() {
             bindingFragmentEcoinfInfo.btEditar.visibility = View.GONE
             bindingFragmentEcoinfInfo.btEliminar.visibility = View.GONE
         } else {
-            bindingFragmentEcoinfInfo.btEditar.visibility = View.VISIBLE
+            //bindingFragmentEcoinfInfo.btEditar.visibility = View.VISIBLE
             bindingFragmentEcoinfInfo.btEliminar.visibility = View.VISIBLE
         }
 
