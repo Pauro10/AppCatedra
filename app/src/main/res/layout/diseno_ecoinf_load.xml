@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewEcoinf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:contentPadding="3dp">
+
+        <ImageView
+            android:id="@+id/cardViewEcoinfInterior"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#DAFFFFFF"
+            android:scaleType="centerCrop" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/testtest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/ivImagen"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@color/colorShimmer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/heebo_medium"
+                android:background="@color/colorShimmer"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toEndOf="@+id/ivImagen"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvNumTel"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="144dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/heebo_medium"
+                android:background="@color/colorShimmer"
+                android:textColor="@color/grey"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/ivImagen"
+                app:layout_constraintTop_toBottomOf="@+id/tvDirecion" />
+
+            <TextView
+                android:id="@+id/tvDirecion"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/colorShimmer"
+                android:fontFamily="@font/heebo_medium"
+                android:textColor="@color/grey"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/ivImagen"
+                app:layout_constraintTop_toBottomOf="@+id/tvNombre" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

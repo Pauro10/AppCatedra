@@ -61,9 +61,12 @@ class NoticiasFragment : Fragment() {
     }
 
     private fun observeData() {
+        bindingFragmentNoticias.shimmerViewRvNoticias.startShimmer()
         fetchGestionNoticias().observe(viewLifecycleOwner, Observer {
             noticiasAdapter.setListData(it)
             noticiasAdapter.notifyDataSetChanged()
+            bindingFragmentNoticias.shimmerViewRvNoticias.stopShimmer()
+            bindingFragmentNoticias.shimmerViewRvNoticias.visibility = View.GONE
         })
     }
 

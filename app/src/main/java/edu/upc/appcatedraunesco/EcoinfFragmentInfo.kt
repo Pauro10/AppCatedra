@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.gms.maps.GoogleMap
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
@@ -63,19 +64,30 @@ class EcoinfFragmentInfo : Fragment() {
         }
 
         bindingFragmentEcoinfInfo.btEliminar.setOnClickListener {
-            ecoinfQuery.addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    for (ecoinfSnapshot in snapshot.children) {
-                        ecoinfSnapshot.ref.removeValue()
-                    }
-                }
 
-                override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
+            MaterialAlertDialogBuilder( requireContext() )
+                .setTitle(getString(R.string.txt_eliminarecoinf))
+                .setMessage(getString(R.string.txt_eliminarecoinf2))
+                .setNegativeButton(getString(R.string.txt_cancelar)) { dialog, which ->
+                    // Respond to negative button press
                 }
-            })
-            view?.snack(getString(R.string.ecoinfelim))
-            findNavController().navigate(R.id.action_to_mapsFragment)
+                .setPositiveButton(getString(R.string.txt_aceptar)) { dialog, which ->
+                    ecoinfQuery.addListenerForSingleValueEvent(object : ValueEventListener {
+                        override fun onDataChange(snapshot: DataSnapshot) {
+                            for (ecoinfSnapshot in snapshot.children) {
+                                ecoinfSnapshot.ref.removeValue()
+                            }
+                        }
+
+                        override fun onCancelled(error: DatabaseError) {
+                            TODO("Not yet implemented")
+                        }
+                    })
+                    view?.snack(getString(R.string.ecoinfelim))
+                    findNavController().navigate(R.id.action_to_mapsFragment)
+                }
+                .show()
+
         }
 
         return this.bindingFragmentEcoinfInfo.root

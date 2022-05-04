@@ -36,18 +36,6 @@
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".ActivityRegistro3"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ActivityRegistro2"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ActivityRegistro1"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".ActivitySplashScreen"
             android:exported="true"
             android:screenOrientation="portrait">

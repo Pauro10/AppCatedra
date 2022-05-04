@@ -37,6 +37,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
+                android:layout_marginRight="20dp"
                 android:src="@drawable/ic_notes_dark" />
 
             <ImageView
@@ -45,7 +46,8 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
-                android:src="@drawable/ic_interests_dark" />
+                android:src="@drawable/ic_interests_dark"
+                android:visibility="gone"/>
 
             <ImageView
                 android:id="@+id/btnMapa"
@@ -53,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
+                android:layout_marginRight="20dp"
                 android:src="@drawable/ic_map_dark" />
 
             <ImageView
@@ -61,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
+                android:layout_marginRight="20dp"
                 android:src="@drawable/ic_info_dark" />
 
             <ImageView
@@ -70,6 +74,7 @@
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:visibility="gone"
+                android:layout_marginRight="20dp"
                 android:src="@drawable/ic_admin_panel_settings_dark" />
 
             <ImageView

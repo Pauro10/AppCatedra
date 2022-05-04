@@ -68,9 +68,12 @@ class EcoinfFragment : Fragment() {
     }
 
     private fun observeData() {
+        bindingFragmentEcoinf.shimmerViewRvEcoinf.startShimmer()
         fetchGestionNoticias().observe(viewLifecycleOwner, Observer {
             ecoinfAdapter.setListData(it)
             ecoinfAdapter.notifyDataSetChanged()
+            bindingFragmentEcoinf.shimmerViewRvEcoinf.stopShimmer()
+            bindingFragmentEcoinf.shimmerViewRvEcoinf.visibility = View.GONE
         })
     }
 

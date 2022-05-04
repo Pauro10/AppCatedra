@@ -81,4 +81,10 @@
     <string name="txtConPass">Confirma contrasenya</string>
     <string name="txtCrearCom">Crear Compte</string>
     <string name="txtConsulta">Consulta enviada correctament!</string>
+    <string name="txt_eliminarnoticia">Eliminar notícia</string>
+    <string name="txt_eliminarnoticia2">Segur que vols eliminar la notícia?</string>
+    <string name="txt_cancelar">Cancel·lar</string>
+    <string name="txt_aceptar">Acceptar</string>
+    <string name="txt_eliminarecoinf">Eliminar ecoinfraestructura</string>
+    <string name="txt_eliminarecoinf2">Estàs segur que vols eliminar l\'ecoinfraestructura?</string>
 </resources>

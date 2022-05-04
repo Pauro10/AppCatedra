@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
@@ -20,7 +21,7 @@ class NoticiaFragmentInfo : Fragment() {
 
     private lateinit var bindingFragmentNoticiaInfo: FragmentNoticiaInfoBinding
     private lateinit var dbReference: DatabaseReference
-    private lateinit var ecoinfQuery: Query
+    private lateinit var noticiafQuery: Query
 
     private val args by navArgs<NoticiaFragmentInfoArgs>()
 
@@ -44,7 +45,7 @@ class NoticiaFragmentInfo : Fragment() {
         }
 
         dbReference = FirebaseDatabase.getInstance().reference;
-        ecoinfQuery = dbReference.child("Noticia").orderByChild("titulo").equalTo(args.currentNoticia.titulo)
+        noticiafQuery = dbReference.child("Noticia").orderByChild("titulo").equalTo(args.currentNoticia.titulo)
 
         bindingFragmentNoticiaInfo.tvTitulo.setText(args.currentNoticia.titulo)
         bindingFragmentNoticiaInfo.tvDescripcion.setText(args.currentNoticia.descripcion)
@@ -63,19 +64,29 @@ class NoticiaFragmentInfo : Fragment() {
         }
 
         bindingFragmentNoticiaInfo.btEliminar.setOnClickListener {
-            ecoinfQuery.addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    for (NoticiaSnapshot in snapshot.children) {
-                        NoticiaSnapshot.ref.removeValue()
-                    }
-                }
 
-                override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
+            MaterialAlertDialogBuilder( requireContext() )
+                .setTitle(getString(R.string.txt_eliminarnoticia))
+                .setMessage(getString(R.string.txt_eliminarnoticia2))
+                .setNegativeButton(getString(R.string.txt_cancelar)) { dialog, which ->
+                    // Respond to negative button press
                 }
-            })
-            view?.snack(getString(R.string.noticiaelim))
-            findNavController().navigate(R.id.action_to_mapsFragment)
+                .setPositiveButton(getString(R.string.txt_aceptar)) { dialog, which ->
+                    noticiafQuery.addListenerForSingleValueEvent(object : ValueEventListener {
+                        override fun onDataChange(snapshot: DataSnapshot) {
+                            for (NoticiaSnapshot in snapshot.children) {
+                                NoticiaSnapshot.ref.removeValue()
+                            }
+                        }
+
+                        override fun onCancelled(error: DatabaseError) {
+                            TODO("Not yet implemented")
+                        }
+                    })
+                    view?.snack(getString(R.string.noticiaelim))
+                    findNavController().navigate(R.id.action_to_mapsFragment)
+                }
+                .show()
         }
 
         bindingFragmentNoticiaInfo.btEditar.setOnClickListener {

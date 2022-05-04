@@ -75,13 +75,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
             app:startIconDrawable="@drawable/ic_telefono"
-            app:startIconTint="@color/black">
+            app:startIconTint="@color/black"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tfNumeroTelefono"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="text" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -146,7 +147,7 @@
                 android:id="@+id/tfLatitud"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="text" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -171,7 +172,7 @@
                 android:id="@+id/tfLongitud"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="text" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

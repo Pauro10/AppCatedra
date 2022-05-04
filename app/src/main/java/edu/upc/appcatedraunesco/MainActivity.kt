@@ -41,10 +41,10 @@ class MainActivity : AppCompatActivity() {
             this.changeBottomMenuIcon(3)
         }
 
-        bindingMainActivity.btnProductos.setOnClickListener {
+        /*bindingMainActivity.btnProductos.setOnClickListener {
             findNavController(R.id.fragmentContainer).navigate(R.id.action_to_productosFragment)
             this.changeBottomMenuIcon(2)
-        }
+        }*/
 
         bindingMainActivity.btnInfo.setOnClickListener {
             findNavController(R.id.fragmentContainer).navigate(R.id.action_to_infoFragment)
@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
 
         this.bindingMainActivity.btnSettings.setImageResource(R.drawable.ic_settings_bright)
         this.bindingMainActivity.btnInfo.setImageResource(R.drawable.ic_info_bright)
-        this.bindingMainActivity.btnProductos.setImageResource(R.drawable.ic_interests_bright)
+        //this.bindingMainActivity.btnProductos.setImageResource(R.drawable.ic_interests_bright)
         this.bindingMainActivity.btnNoticias.setImageResource(R.drawable.ic_notes_bright)
         this.bindingMainActivity.btnMapa.setImageResource(R.drawable.ic_map_bright)
         this.bindingMainActivity.btnAdmin.setImageResource(R.drawable.ic_admin_panel_settings_bright)
@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
             5 -> this.bindingMainActivity.btnAdmin.setImageResource(R.drawable.ic_admin_panel_settings_dark)
             4 -> this.bindingMainActivity.btnSettings.setImageResource(R.drawable.ic_settings)
             1 -> this.bindingMainActivity.btnInfo.setImageResource(R.drawable.ic_info_dark)
-            2 -> this.bindingMainActivity.btnProductos.setImageResource(R.drawable.ic_interests_dark)
+            //2 -> this.bindingMainActivity.btnProductos.setImageResource(R.drawable.ic_interests_dark)
             3 -> this.bindingMainActivity.btnNoticias.setImageResource(R.drawable.ic_notes_dark)
             0 -> this.bindingMainActivity.btnMapa.setImageResource(R.drawable.ic_map_dark)
         }

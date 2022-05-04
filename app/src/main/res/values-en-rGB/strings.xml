@@ -81,4 +81,10 @@
     <string name="txtConPass">Confirm password</string>
     <string name="txtCrearCom">Create Account</string>
     <string name="txtConsulta">Query sent successfully!</string>
+    <string name="txt_eliminarnoticia">Delete news</string>
+    <string name="txt_eliminarnoticia2">Are you sure you want to delete the news item?</string>
+    <string name="txt_cancelar">Cancel</string>
+    <string name="txt_aceptar">Accept</string>
+    <string name="txt_eliminarecoinf">Remove eco-infrastructure</string>
+    <string name="txt_eliminarecoinf2">Are you sure you want to remove the eco-infrastructure?</string>
 </resources>
