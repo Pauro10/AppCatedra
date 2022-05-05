@@ -3,10 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ConstraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/Infotv"
@@ -18,7 +22,7 @@
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/heebo_medium"
             android:gravity="start"
-            android:text="Informacion"
+            android:text="@string/txt_infopregunta"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,18 +30,173 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            android:textAlignment="center"
+            android:layout_marginEnd="16dp"
+            android:text="@string/txt_info"
+            android:lineSpacingExtra="1.5dp"
             android:textColor="@color/black"
-            android:textSize="14dp"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Infotv" />
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/txt_info2"
+            android:lineSpacingExtra="1.5dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/txtcolaboradores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/heebo_medium"
+            android:gravity="start"
+            android:text="@string/txt_infocolab"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <ImageView
+            android:id="@+id/colab2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtcolaboradores"
+            app:srcCompat="@drawable/colab2" />
+
+        <ImageView
+            android:id="@+id/colab3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/colab12"
+            app:srcCompat="@drawable/colab3" />
+
+        <ImageView
+            android:id="@+id/colab4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/colab2"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toEndOf="@+id/colab12"
+            app:layout_constraintTop_toBottomOf="@+id/txtcolaboradores"
+            app:srcCompat="@drawable/colab4" />
+
+        <ImageView
+            android:id="@+id/colab5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/colab2"
+            app:srcCompat="@drawable/colab5" />
+
+        <ImageView
+            android:id="@+id/colab6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/colab5"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toEndOf="@+id/colab3"
+            app:layout_constraintTop_toBottomOf="@+id/colab4"
+            app:srcCompat="@drawable/colab6" />
+
+        <ImageView
+            android:id="@+id/colab7"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/colab3"
+            app:srcCompat="@drawable/colab7" />
+
+        <ImageView
+            android:id="@+id/colab8"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/colab9"
+            app:layout_constraintStart_toEndOf="@+id/colab7"
+            app:layout_constraintTop_toBottomOf="@+id/colab6"
+            app:srcCompat="@drawable/colab8" />
+
+        <ImageView
+            android:id="@+id/colab9"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/colab5"
+            app:srcCompat="@drawable/colab9" />
+
+        <ImageView
+            android:id="@+id/colab10"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/colab7"
+            app:srcCompat="@drawable/colab10" />
+
+        <ImageView
+            android:id="@+id/colab13"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/colab9"
+            app:srcCompat="@drawable/colab13" />
+
+        <ImageView
+            android:id="@+id/colab11"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/colab13"
+            app:layout_constraintStart_toEndOf="@+id/colab10"
+            app:layout_constraintTop_toBottomOf="@+id/colab8"
+            app:srcCompat="@drawable/colab11" />
+
+        <ImageView
+            android:id="@+id/colab12"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtcolaboradores"
+            app:srcCompat="@drawable/colab12" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </layout>

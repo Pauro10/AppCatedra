@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AppCatedraUnesco</string>
+    <string name="app_name">AECSVA</string>
     <string name="login_sucs">Inicio de sesión correcto</string>
     <string name="error_campos">Tienes que introducir los campos solicitados</string>
     <string name="error_login">Error inicio de sesión</string>
@@ -87,4 +87,8 @@
     <string name="txt_aceptar">Aceptar</string>
     <string name="txt_eliminarecoinf">Eliminar ecoinfraestructura</string>
     <string name="txt_eliminarecoinf2">Estás seguro que quieres eliminar la ecoinfraestructura?</string>
+    <string name="txt_info">Es una App en conjunto con el proyecto \'Alianzas para la Emergencia Climática y Sanitaria en el Valle De Aburrá\'. El objetivo principal es realizar intervenciones modelo integrales e innovadoras en cuencas urbanas de Medellín, articulando la recomposición del tejido social a través de la construcción de un acuerdo sobre el territorio.</string>
+    <string name="txt_info2">La funcionalidad de la App es hacer un visor con geolocalización de las ecoinfraestructuras y un apartado con las últimas noticias sobre estas.</string>
+    <string name="txt_infopregunta">¿Qué funcionalidad tiene esta APP?</string>
+    <string name="txt_infocolab">Colaboradores de la App:</string>
 </resources>

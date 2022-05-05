@@ -11,7 +11,7 @@
         android:id="@+id/background_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/slapsh_screen" />
+        android:src="@drawable/splash_screen" />
 
     <TextView
         android:id="@+id/powered_by_line"

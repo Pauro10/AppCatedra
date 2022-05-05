@@ -16,7 +16,7 @@ import java.util.*
 
 class ActivitySplashScreen : AppCompatActivity() {
 
-    private val SPLASH_TIMER: Long = 5000
+    private val SPLASH_TIMER: Long = 3000
 
     // Variables
     private lateinit var backgroundImage: ImageView
